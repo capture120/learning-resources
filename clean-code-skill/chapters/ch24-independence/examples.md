@@ -1,0 +1,12 @@
+# Chapter 24: Independence — Examples
+
+This chapter has no code examples. It argues from two brief illustrations and a reality-check observation; those carry the values.
+
+### The shopping cart application that looks like one
+The book's test for whether an architecture supports the system's use cases: a shopping cart application with a good architecture *looks like* a shopping cart application. Its use cases are plainly visible in the structure — first-class classes, functions, or modules in prominent positions, named after the behaviors they implement. Developers never have to hunt for where a behavior lives. The lesson: architecture can't do much to make behavior work, but it can and must *clarify and expose* behavior so the system's intent is visible at the architectural level.
+
+### The spectrum of execution shapes (monolith to microservices)
+To show how architecture supports operation, the book surveys the execution shapes different systems may need: an array of little services running in parallel on many servers; a plethora of lightweight threads sharing one process's address space; a few processes in isolated address spaces; or a plain monolith in a single process. The point is not which to pick — it's that a good architecture leaves the pick open. A monolith that *depends on* being a monolith cannot easily be upgraded to multiple threads, processes, or microservices should the need arise. An architecture whose components are properly isolated, and which doesn't assume how those components communicate, will find it much easier to transition through the spectrum as operational needs change. The lesson: don't bake the deployment/execution topology into the code.
+
+### "Welcome to the real world" — the unknowable goals
+After listing the four concerns an architecture must balance (use cases, operation, development, deployment), the author punctures any illusion that this is straightforward: most of the time we don't know the use cases, the operational constraints, the team structure, or the deployment requirements — and even if we did, they all change over the system's lifecycle. "The goals we must meet are indistinct and inconstant. Welcome to the real world." This anchors the chapter's closing principle: since you can't hit goals you can't see, use relatively inexpensive partitioning and isolation principles to keep options open as long as possible. A good architecture makes the system easy to change, in all the ways it must change, by leaving options open.

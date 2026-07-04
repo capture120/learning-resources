@@ -1,0 +1,67 @@
+# Chapter 3 Examples: Working with Code
+
+### The Roman amphitheater in Arles
+An ancient amphitheater in Arles, France once entertained up to 20,000 people with chariot races and gladiatorial combat. After Rome fell, a small town was built right inside the arena — a sensible choice at the time, since it offered walls and drainage. Later inhabitants likely found the arrangement odd and inconvenient, and may have judged the amphitheater's architects for decisions that made it hard to turn into a town. Codebases are the same: layers are written in one generation and modified by the next, many hands touch the code, tests are missing or enforce assumptions of a bygone era, and changing requirements twist the code's usage. **Lesson:** Existing code looks strange because it was built for a different purpose in a different era, not because its authors were incompetent.
+
+### Martin Fowler's technical debt quadrant
+Fowler classifies technical debt on two axes — deliberate vs. inadvertent, reckless vs. prudent — each cell captured by a catchphrase. Deliberate-reckless: "We don't have time for design." Deliberate-prudent: "Let's ship now and deal with consequences." Inadvertent-reckless: "What's layering?" Inadvertent-prudent: "Now we know how we should've done it." Prudent-deliberate debt is the classic, acceptable trade-off; reckless debt comes from pressure or ignorance; prudent-inadvertent debt is the unavoidable product of learning. **Lesson:** Not all debt is equal — some is a disciplined trade-off, some is negligence, and some is unavoidable hindsight, so diagnose which kind you have before reacting.
+
+### "Just" as a red flag for reckless debt
+When teams under delivery pressure say things like "We can *just* add structured logging later" or "*Just* increase the timeout," the word "just" signals that reckless, deliberate debt is being created — a shortcut taken without honest accounting of its cost. **Lesson:** Listen for the word "just" in planning discussions; it usually marks a reckless shortcut being waved through.
+
+### The failed sign-up accounts hindsight
+A team realizes only in hindsight: "We should have created user accounts even for people who didn't complete the sign-up flow. Marketing needs to capture failed sign-ups, and now we have to add extra code that could've been avoided if it was part of the core data model." Nobody was careless — the need simply wasn't knowable earlier. This is prudent, inadvertent debt: a natural outcome of learning the problem domain, discoverable later through retrospectives. **Lesson:** Some technical debt is the unavoidable price of learning, recognizable only after the fact, and a mark that the project lived long enough to learn.
+
+### Johanna's login service proposal email
+Johanna emails her team proposing to split the login service into separate authentication and authorization services. She states facts: login instability accounts for over 30 percent of on-call issues, and the instability stems from intermingled authentication and authorization logic. She names the risk: the design makes security features hard to test, threatens the promise to keep customer data safe, and may draw compliance findings at the next audit. She's charitable about history (the access control logic landed there out of expedience under time constraints, not by architectural principle), proposes a solution (refactor and move authorization out), and discusses an alternative — piggybacking on the backend team's authorization service — while explaining why it may not fit (user-facing vs. system-to-system authorization). She closes by inviting discussion. **Lesson:** This is the model for proposing debt paydown — written, factual, focused on cost and risk rather than "this code is ugly," with a solution, alternatives, and trade-offs.
+
+### Feathers's legacy code change algorithm and the garden fence
+Michael C. Feathers's *Working Effectively with Legacy Code* prescribes five steps for safely modifying existing code: identify change points, find test points, break dependencies, write tests, then make changes and refactor. The authors frame the first four steps as clearing space and building a fence around a field before planting seeds in step five — until the fence is up, wild animals can wander in and dig up your plants. **Lesson:** Secure existing behavior with tests before changing anything; only inside a protected perimeter can you make bold changes safely.
+
+### The missing-braces Java code smell
+A Java snippet reads roughly:
+
+```java
+if (a < b)
+  a += 1;
+```
+
+This is perfectly correct — Java allows a single unbraced statement after a conditional. But later, someone adds a line:
+
+```java
+if (a < b)
+  a += 1;
+  a = a * 2;
+```
+
+Java ignores indentation, so the doubling runs unconditionally — a bug that braces in the original code would have made far harder to introduce. The brace omission is a code smell: not buggy itself, but a pattern known to cause problems. Linters catch this and other smells like long methods, duplicate code, excessive branching, and too many parameters. **Lesson:** Code can be correct and still smell — patterns that invite future mistakes deserve cleanup, and tooling can spot them.
+
+### The Boy Scout principle
+Internet coding lore quotes the Boy Scout rule: "Always leave the campground cleaner than you found it." A codebase, like a campground, is shared, and it's nice to inherit a clean one. Applied to code, it means opportunistically cleaning adjacent code with every bug fix or feature, so the codebase improves continuously without any stop-the-world refactoring project — the cost is amortized across many changes. **Lesson:** Continuous small cleanups beat heroic refactoring projects.
+
+### Ben Horowitz's ten-times-better rule
+In *The Hard Thing About Hard Things*, Ben Horowitz writes that a technology startup must build a product at least ten times better than the prevailing way of doing things — two or three times better won't make people switch fast enough or in large enough volume to matter. The authors apply the same bar to code: a rewrite or a divergence from standards must be an order of magnitude better to justify its cost, because most engineers underestimate the value of convention and overestimate the value of ignoring it. **Lesson:** Hold rewrites and standard-breaking to a 10x improvement bar; small gains never cover the switching cost.
+
+### Dan McKinley's "Choose Boring Technology" and innovation tokens
+In his presentation "Choose Boring Technology," Dan McKinley argues that the failure modes of boring technology are well understood: all technology breaks, but old technology breaks in predictable ways while new technology breaks in surprising ways, with smaller communities, less stability, sparser documentation, and fewer Stack Overflow answers. He models the cost with "innovation tokens": each adoption of new technology spends a token of effort that could have gone to innovative features, and a company holds only a few. The authors add a multiplier — if a new framework or database costs one token, a new programming language costs three, because it drags a whole ecosystem (build systems, test frameworks, IDEs, libraries) along with it. **Lesson:** Budget novelty deliberately — prefer mature technology, and treat new languages as triple-price purchases.
+
+### Mortgage analytics firm vs. ten-engineer game studio
+Two hypothetical companies illustrate where to spend innovation tokens. A company specializing in predictive analytics for mortgages, staffed with PhD data scientists, sensibly adopts bleeding-edge machine learning — it's their core competency. A ten-engineer shop building iOS games should use something off the shelf instead. **Lesson:** Spend innovation tokens only on technology serving your company's core, high-value competencies; everywhere else, buy boring.
+
+### Chris's Scala and SBT ordeal at LinkedIn
+In 2009, LinkedIn developers fell for Scala: nicer to write than Java, expressive type system, less verbose, functional, and — running on the JVM — theoretically operable with existing tools and interoperable with Java libraries. Big projects adopted it, including LinkedIn's distributed graph and Kafka. When Chris built Samza, a stream processing system for Kafka, the theory collapsed: Java libraries were clunky with Scala collections, and LinkedIn's build system (Gradle, itself nascent) had no Scala support. The Scala community's own build tool, SBT, had two entirely different DSLs depending on version; most online examples used the abandoned syntax, and the new syntax's documentation was impenetrable. Years of binary incompatibility between Scala versions, JVM segmentation faults, immature libraries, and missing internal-tooling integration followed, until the team began stripping Scala out of client libraries. For Chris, who cared about stream processing rather than language particulars, Scala circa 2011 was a bad choice that diverted enormous time to language and tooling problems — it just wasn't boring enough. **Lesson:** A technology's surrounding ecosystem maturity matters as much as its features, and adopting an immature stack taxes the actual work you set out to do.
+
+### Twitter's Duck Duck Goose rewrite
+Twitter's internal A/B testing tool, Duck Duck Goose (DDG), was built early in the company's history and showed its age after years of explosive growth. The most experienced engineers proposed a rebuild: better architecture, more reliability and maintainability, and a language change from Apache Pig to Scala (by then stable at Twitter after years of investment). Dmitriy managed the team, which estimated one quarter to build and release DDGv2 and a second quarter to retire the old system. Reality: a year to make v2 stable enough to be the default, plus six more months to retire v1 — 18 months for a "six-month" project, over a million dollars in extra development cost, and repeated awkward conversations with vice presidents ("No, really, Boss, it will be better. I just need another quarter, again."). Along the way the old codebase earned the team's respect as its layers of complexity began to make sense. The rewrite was genuinely superior and outlived v1's age, but of the three developers who prototyped it, two left the company and the third changed teams before it shipped. **Lesson:** Even justified rewrites run far over the estimates of experienced people — never enter one expecting a breeze; it will be a slog.
+
+### Chris Beams's commit message rules
+For teams without commit conventions, the authors point to Chris Beams's widely cited guidelines: separate subject from body with a blank line; limit the subject to 50 characters; capitalize it; no trailing period; use the imperative mood; wrap the body at 72 characters; and use the body to explain what and why rather than how. They also show the common convention of prefixing the message with an issue ID, as in "[MYPROJ-123] Make the backend work with Postgres," which links the commit to its ticket for context and tooling. Shorthand like "oops" is fine while cranking out code, but you should rebase, squash, and write a real message before review. **Lesson:** Commit history is communication — squash the noise and write conventional, imperative, why-focused messages tied to issues.
+
+### Companies that fork their own projects
+Internal forks of open source projects begin with developers promising each other they'll contribute changes upstream "later." It rarely happens; minor uncontributed tweaks compound until the fork is effectively different software, upstream features and fixes become painful to merge, and the team realizes it has implicitly signed up to maintain an entire project. The absurd endpoint: some companies end up maintaining forks of their own open source projects because they never contributed their internal changes back. **Lesson:** A fork without upstream contribution silently becomes a whole product you now own — commit changes back or don't fork.
+
+### Fred Brooks and Second System Syndrome
+In *The Mythical Man-Month*, Fred Brooks coined "Second System Syndrome" to describe how simple systems get replaced by complex ones. A first system is limited in scope because its creators don't yet understand the problem domain — it does its job but is awkward. The developers, now experienced, see clearly where they went wrong and pour every clever idea into a second system designed for total flexibility, where everything is configurable and injectable. Second systems are usually a bloated mess. **Lesson:** Experience plus a blank slate breeds overengineering — if you must rewrite, be ruthlessly cautious about overextending the design.
+
+### The Vim/Emacs stigma
+Among self-styled elite coders, IDEs carry a stigma: accepting "help" from an editor is seen as weakness, and Vim or Emacs is fetishized as "an elegant weapon for a more civilized age." The authors call this nonsense — IDEs automate large-codebase refactoring operations (renames, moves, method extraction, signature updates) that are tedious and error-prone by hand — while conceding that Vim and Emacs can be configured to do the same, and warning that automated refactors still need human review and miss call sites reached via reflection or metaprogramming. **Lesson:** Tool snobbery is self-sabotage; use whatever automates your work best, but review what the automation produces.

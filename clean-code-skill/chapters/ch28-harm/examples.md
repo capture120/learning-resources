@@ -1,0 +1,47 @@
+# Chapter 28: Harm — Examples
+
+This chapter (and its Part IV introduction) argues through war stories rather than code. Each story anchors one face of the promise "I will not produce harmful code."
+
+### Turing's ACE report: "mathematicians of ability" and discipline
+
+After writing binary machine code for the Automatic Computing Engine — inventing subroutines, stacks, and floating-point along the way — Alan Turing reported that "we shall need a great number of mathematicians of ability" and that "one of our difficulties will be the maintenance of an appropriate discipline, so that we do not lose track of what we are doing." Martin treats this as the founding statement of software professionalism: eight decades ago, the field's inventor already identified discipline as our central problem. Lesson: professionalism in software was never about cleverness; it has always been about maintained discipline.
+
+### The doubling rate and perpetual inexperience
+
+Martin walks the head count from 1945 (a handful of programmers) to 2025 (on the order of one hundred million), guessing the population now doubles roughly every five years. Consequence: so long as that rate continues, half the world's programmers always have under five years of experience, and for every 30-year veteran there are roughly 63 programmers needing to learn from her, 32 brand new. With too few mentors, the same old mistakes repeat forever. He adds that no technology — Fortran, C, Unix, OO, Java, and the rest — has ever reduced demand for programmers; each made the field accessible to more people, and he warns against the delusion that AI will slow the rate. Behind the numbers sits a demographic shift: the first generations were disciplined mid-career professionals — scientists, engineers, accountants in their 30s–50s (in Martin's first job in 1969, a third to half the programmers were women) — but by 1975 the flood of newcomers was overwhelmingly very young men, "typically not what Turing would have described as disciplined mathematicians," making up in energy (and cheapness) what they lacked in discipline. Lesson: the industry cannot rely on accumulated experience; it needs explicit, teachable disciplines.
+
+### From nerds to heroes and villains (the movie arc, Mojang, and Volkswagen)
+
+Society's image of programmers evolved: invisible technicians, then the bookish "computer genius" in a 1970s coffee commercial, then the teenage hacker-savior of *War Games* (1983), the programmer-villain of *Jurassic Park* (1993), and the programmer-saviors of *The Matrix* (1999). In 2014 at Mojang (makers of Minecraft), Martin watched a 12-year-old boy run up just to get lead programmer Jens "Jeb" Bergensten's autograph — programmers had become children's heroes. The counterpart: in 2015 Volkswagen's North America CEO told Congress that the emissions-test cheating was the work of "a couple of software engineers... for whatever reasons." He was deflecting blame, but he was also literally right — programmers wrote that code, and they besmirched the whole profession; had we a true professional organization, Martin says, their recognition as programmers would, and should, be revoked. Lesson: society now sees our power for good and evil; the profession's honor is held, or betrayed, by individual programmers.
+
+### The catastrophe roll call
+
+A rapid list establishing that software already kills and bankrupts: the two 737 MAX crashes (2018–2019, 346 dead, a software weakness exposed by a hardware failure); the Schiaparelli Mars lander (2016, software believed it had landed while 4 km up); the Mars Climate Orbiter (1999, English vs. metric units in ground software); Ariane 5 (1996, unchecked 64-bit float to 16-bit integer conversion overflowed, crashing the onboard computers); Therac-25 (a race condition let a radiation-therapy machine kill three and injure three); Knight Capital; the Toyota stack overflow bug; Healthcare.gov. Lesson: "We, programmers, through the code that we write, are killing people." It is only a matter of time before a small mistake kills tens of thousands — and if the profession has no ethics, standards, or disciplines to show when politicians demand an accounting, "we will be found GUILTY." The Oath exists as the start of that ethics.
+
+### Volkswagen Dieselgate — harm to society by deceit
+
+VW programmers wrote code that purposely thwarted EPA emissions tests, allowing cars emitting 20 times the safe level of nitrous oxides to be sold. The code was harmful because it was deceitful, and it potentially harmed the health of everyone living where those cars were driven — benefit to the employer, harm to society. Martin would fire and prosecute those programmers: whether they knew the code's purpose or not, *they should have known*. "Hiding behind requirements written by others is no excuse. It's our fingers on the keyboard." Lesson: never write code that benefits your employer at society's expense, and never write code whose purpose you don't understand.
+
+### Healthcare.gov — harm to society by silence
+
+The Affordable Care Act mandated, by law, that a website go live on October 1, 2013. It did — and didn't work at all for months, nearly causing the law itself to be overturned. Whatever your politics, a technical screwup putting a huge public policy at risk is harm to society. Martin assigns blame to every programmer, lead, manager, and director who knew the system wasn't ready and stayed silent, and to everyone who shrugged "I'm just doing my job — it's their problem." Lesson: you were hired because you can see trouble before it happens; that knowledge creates a duty to speak up before deployment, not after.
+
+### Knight Capital — $460 million in 45 minutes from dead code
+
+Knight Capital's trading system split large "parent" stock trades into small "child" trades, regulated by a flag. Years earlier the old splitting algorithm, Power-Peg, had been replaced by SMARS — but the dead Power-Peg code was left in the system, merely disabled via that flag. A new release repurposed the flag and turned it on. Technicians deployed the release to only seven of eight servers; on the eighth, the stale code saw the flag and began making child trades in a high-speed infinite loop. It took 45 minutes to shut the server down, by which time Knight had bought over $7 billion of unwanted stock and had to sell at a $460M loss — more than its $360M cash. Bankruptcy. The mistake, Martin says, is that they did not KNOW what their system would do — and the reason they couldn't know was the structural harm of dead code left in place. Lessons: delete dead code rather than flagging it off; messy structure destroys your ability to predict behavior; "messy software is harmful software."
+
+### Toyota unintended acceleration — code that did not KNOW it would not kill
+
+Investigators found Toyota's software — the stack overflow bug of the catastrophe roll call — could make cars accelerate uncontrollably with brakes failing, and probably had, killing perhaps 89 people. The codebase had thousands of global variables. Martin's double negative is the point: the programmers did not KNOW that their code would NOT kill, and given the stakes, they should have. Lesson: required certainty scales with risk. Perfect knowledge is impossible, but when lives are at stake you must drive knowledge of "no harm" as close to perfection as you can — and structural mess like Toyota's thousands of globals undermines that knowledge.
+
+### The "CALL 911" chat app — no software is too unimportant to harm
+
+A hypothetical answering the comfort of "my software isn't important enough to hurt anyone": you write a simple chat app; a user having a medical emergency types "HELP ME. CALL 911"; your app malfunctions and drops the message. Or your simple shopping site leaks personal data to identity thieves, or its poor functioning drives customers to a competitor. At the very least, the money spent building the software is at stake, plus whatever users stake by depending on it. Lesson: "There's almost always more at stake than you think."
+
+### The two-programs thought experiment — softness beats behavior
+
+Imagine two programs: one works perfectly but is impossible to change; the other does nothing correctly but is easy to change. The first becomes useless forever the moment requirements change — and they always change. The second can be made to work, and then kept working cheaply forever. Therefore the value of softness outranks the value of current behavior in all but the most urgent situations (a production disaster losing $10M a minute — not a startup deadline). Lesson: protecting changeability *is* protecting value; rushing that sacrifices structure destroys the more valuable of software's two values.
+
+### The startup fallacy
+
+Startups believe they're in an emergency that justifies throwing out the rules and dashing to the finish line, leaving a mess behind. Martin inverts this: the one certainty in a startup is that you are building the wrong product — "no product survives contact with the user" — so the ability to change the product without wading through a mess is the startup's survival trait. The mess usually starts slowing the team down before the first deployment. Capped with Brian Marick's line: "When it comes to software, it never pays to rush." Lesson: urgency arguments for dirty code are almost always self-defeating; the quick-and-dirty exception is reserved for live production crises, and even then the patch must be cleaned up afterward.
