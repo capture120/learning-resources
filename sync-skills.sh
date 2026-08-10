@@ -2,7 +2,8 @@
 # Sync skills from this repo into ~/.claude/skills as symlinks.
 #
 # Rules:
-# - A folder is a skill only if it contains a SKILL.md file.
+# - A folder is a skill only if it contains a SKILL.md file. Folders at any
+#   depth count (for example, books/design/refactoring-ui-skill-nathan).
 # - Only symlinks that point into this repo are managed.
 # - Real folders in ~/.claude/skills (for example, Yuzu work skills) are never touched.
 # - Dangling symlinks that point into this repo are removed.
@@ -32,12 +33,11 @@ for link in "$TARGET_DIR"/*; do
   esac
 done
 
-# Create a symlink for each valid skill folder.
+# Create a symlink for each valid skill folder, at any depth.
 for source_dir in "${SOURCE_DIRS[@]}"; do
-  for skill_dir in "$source_dir"/*/; do
-    skill_dir="${skill_dir%/}"
+  while IFS= read -r skill_md; do
+    skill_dir="$(dirname "$skill_md")"
     name="$(basename "$skill_dir")"
-    [ -f "$skill_dir/SKILL.md" ] || continue
 
     link="$TARGET_DIR/$name"
     if [ -L "$link" ]; then
@@ -53,5 +53,5 @@ for source_dir in "${SOURCE_DIRS[@]}"; do
       ln -s "$skill_dir" "$link"
       echo "linked:  $name -> $skill_dir"
     fi
-  done
+  done < <(find "$source_dir" -name SKILL.md | sort)
 done
