@@ -1,5 +1,5 @@
 ---
-name: crafting-engineering-strategy-nathan
+name: crafting-engineering-strategy-textbook
 description: Distilled knowledge from Crafting Engineering Strategy (Will Larson) — diagnosis, guiding policy, and operations; the Explore, Diagnose, Refine, Set Policy, Operate process; strategy testing, systems modeling, Wardley maps, and worked case studies. Use for questions about creating, evaluating, or driving adoption of engineering strategy, with or without formal authority.
 ---
 

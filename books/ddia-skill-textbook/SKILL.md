@@ -1,5 +1,5 @@
 ---
-name: designing-data-intensive-applications-nathan
+name: designing-data-intensive-applications-textbook
 description: Distilled knowledge from "Designing Data-Intensive Applications" 2nd edition (Kleppmann & Riccomini) — data models, storage engines, replication, sharding, transactions, distributed systems, batch/stream processing, and data ethics. Use when designing, choosing, debugging, or reasoning about databases and data systems.
 ---
 

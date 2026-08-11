@@ -1,5 +1,5 @@
 ---
-name: effective-engineer-nathan
+name: effective-engineer-textbook
 description: Distilled knowledge from The Effective Engineer (Edmond Lau) — leverage, prioritization, iteration speed, measurement, validation, and long-term code and team value. Use when deciding what to work on or how to increase engineering impact.
 ---
 

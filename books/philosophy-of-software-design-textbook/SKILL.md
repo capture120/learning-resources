@@ -1,5 +1,5 @@
 ---
-name: philosophy-of-software-design-nathan
+name: philosophy-of-software-design-textbook
 description: Distilled knowledge from A Philosophy of Software Design 2nd edition (John Ousterhout) — complexity, deep modules, information hiding, abstraction layers, and strategic programming. Use when designing, reviewing, or refactoring module boundaries and APIs.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: clean-code-nathan
+name: clean-code-textbook
 description: Distilled knowledge from Clean Code 2nd edition (Robert C. Martin) — naming, functions, comments, formatting, tests, and refactoring discipline. Use when writing, reviewing, or cleaning up code.
 ---
 

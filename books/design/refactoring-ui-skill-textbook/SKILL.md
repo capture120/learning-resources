@@ -1,5 +1,5 @@
 ---
-name: refactoring-ui-nathan
+name: refactoring-ui-textbook
 description: Practical UI design guidance distilled from Refactoring UI (Wathan & Schoger). Use when designing or improving user interfaces — starting a new app/feature/screen, fixing visual hierarchy, choosing spacing/layout, typography, color palettes, shadows/depth, handling images and icons, or polishing a structurally sound but plain-looking UI.
 ---
 

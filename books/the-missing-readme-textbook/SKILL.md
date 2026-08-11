@@ -1,5 +1,5 @@
 ---
-name: the-missing-readme-nathan
+name: the-missing-readme-textbook
 description: Distilled knowledge from The Missing README (Riccomini & Ryaboy) — the unwritten professional knowledge for software engineers: working with existing code, shipping safely, on-call, design docs, and teamwork. Use for questions about engineering practices and early-career growth.
 ---
 

@@ -3,7 +3,7 @@
 #
 # Rules:
 # - A folder is a skill only if it contains a SKILL.md file. Folders at any
-#   depth count (for example, books/design/refactoring-ui-skill-nathan).
+#   depth count (for example, books/design/refactoring-ui-skill-textbook).
 # - Only symlinks that point into this repo are managed.
 # - Real folders in ~/.claude/skills (for example, Yuzu work skills) are never touched.
 # - Dangling symlinks that point into this repo are removed.

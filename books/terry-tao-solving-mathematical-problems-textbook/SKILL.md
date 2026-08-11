@@ -1,5 +1,5 @@
 ---
-name: terry-tao-solving-mathematical-problems-nathan
+name: terry-tao-solving-mathematical-problems-textbook
 description: Distilled knowledge from Solving Mathematical Problems (Terence Tao) — problem-solving strategy and fundamental techniques across number theory, algebra, geometry, and games. Use when tackling hard problems or teaching problem-solving technique.
 ---
 

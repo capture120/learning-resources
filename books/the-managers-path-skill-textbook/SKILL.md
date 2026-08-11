@@ -1,5 +1,5 @@
 ---
-name: the-managers-path-nathan
+name: the-managers-path-textbook
 description: Distilled knowledge from The Manager's Path (Camille Fournier) — the engineering management ladder from mentoring and tech lead through director to CTO. Use for questions about engineering management, leadership, or career growth.
 ---
 

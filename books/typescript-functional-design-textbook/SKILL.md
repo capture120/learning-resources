@@ -1,5 +1,5 @@
 ---
-name: typescript-functional-design-nathan
+name: typescript-functional-design-textbook
 description: >-
   Design or write or refactor or review or teach TypeScript through foundational functional programming. Use this skill when work involves pure functions or referential transparency or function signatures or higher-order functions or immutable data or explicit state transitions or closed alternatives or effect descriptions or a thin effectful shell. Keep the TypeScript idiomatic. Preserve useful object-oriented and framework conventions unless they hide effects or allow invalid states.
 ---

@@ -1,5 +1,5 @@
 ---
-name: swe-google-learnings-nathan
+name: swe-google-learnings-textbook
 description: Distilled knowledge from Software Engineering at Google (Winters, Manshreck, Wright) — engineering culture, teams, code review, testing, style guides, version control, build systems, static analysis, dependency management, large-scale changes, and CI/CD. Use for questions about software engineering practices, tooling, or scaling an engineering organization.
 ---
 
