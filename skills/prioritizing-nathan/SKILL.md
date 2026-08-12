@@ -41,3 +41,13 @@ I should be breaking large work into smaller pieces anyways, but it def won't al
 What I'm saying is be flexible and think about what works well given my use case, the difficulty of the task, how well scoped the task is, whether a task should be broken down to different problems with different goals/metrics/definitions of success. etc. 
 
 I'm still figuring this out. 
+
+Set goals rigorously
+
+Define success for those goals
+
+Set metrics rigorously
+
+Don't over rely on metrics, trust your own sense and intuition on top of metrics.
+
+Have top level intuitions you follow. Bottom up experiments/metrics/feedback inform those intutions. 

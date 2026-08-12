@@ -57,7 +57,7 @@ description: advice for ai research
 
 "You must say that things have to be this way, therefore we've got to keep going. That's the top-down belief, and it's based on this multifaceted beauty and inspiration by the brain."
 
-
+Have top level intuitions you follow. Bottom up experiments/metrics/feedback inform those intutions. 
 
 # andrej
 
