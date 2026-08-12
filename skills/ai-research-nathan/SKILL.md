@@ -80,3 +80,11 @@ The joys of Neural Net library API design :)"
 "
 Neural Nets are like Lego: there are a few basic building blocks that require a bit of understanding, and then you can build all kinds of awesome castles.
 "
+
+* Math for AI
+"imo, basic multivariable calculus, basic convex optimization, medium linear algebra, mostly statistics.
+I didn't take enough statistics in undergrad and regretted it several times. Instead I did a bunch of partial differential equations, chaos theory, numerical analysis, group theory, mathematical logic (incompleteness theory etc), and all of these ended up being quite useless. And after ~5-8 years I only just barely remember any of it :("
+
+"
+In retrospect I quite enjoyed writing my first AI short story and will probably continue to write more a bit on a side as I did the first time (though nothing specific is in works right now). I actually consider it a relatively good exercise for research because you're forcing yourself to hypothesize consistent and concrete outcomes. Pushing these in your mind to their conclusions is one way to achieve fun insights into what approaches to AI are more or less plausible.
+"
