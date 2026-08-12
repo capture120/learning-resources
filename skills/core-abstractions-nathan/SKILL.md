@@ -21,3 +21,10 @@ Agents change a lot, but many good practices remain just as good as they always 
 
 "Write a design document (with the same care that you would for a team of humans). Include things like tech choices and invariants"
 "Ask the agent to make an implementation plan, decompose the plan into work items and record them (consider a local issue tracker)"
+
+to consider (not exhaustive)
+- invariants
+- core functions / abstractions (classes, helpers)
+- data model (eg database)
+- server actions/load
+- types / interfaces
