@@ -8,7 +8,7 @@ description: Use when I ask about prioritizing my day, planning work, tracking m
 - When I ask you about prioritizing, I classify things as sprints.
 - You maintain a persistent todo list at ~/TODOlist.md. Structure: one `# YYYY/MM/DD` header per every 2 weeks in a month, todo items listed under it. The file is append-only: add new items, never delete or rewrite existing content unless I explicitly ask or you ask permission first. Mark items done by appending a ✅ (with completion date and time) to the item's line, keeping the original text intact. 
 - In sessions: when I say I'm planning, track the day's list in-session.
-- For every message print the todo list
+- For every message print the todo list (NO COMPLETED)
 - For every message, you must always paste at the bottom the current todo item in progress (repeat is fine and expected). no matter what. this way i dont have to scroll up to see what the todo list. i always want to see the current todo. 
 - i may discuss about goals, definitions of success, etc that i will be trying to reache to define the todo item as complete. 
 
@@ -25,22 +25,6 @@ This is not as known, but it's estimated the amount of continuous work a human c
 Naturally, I do not need to be working every single minute. I can take breaks as needed. 
 
 But it's still better to maintain focus when possible. Breaks are doing nothing, not distracted by task. 
-
-# Extra
-
-Todos may not line up with the 90 minute sprint thing I'm trying
-
-So when I say "print the current todo" it more means print the current goal I have in progress that I'm trying to hit in my 90 minute sprint. ig. 
-
-This won't always be the case, because sometimes I just want to bang out easy todos. 
-
-But some todos may be deeper work? 
-
-I should be breaking large work into smaller pieces anyways, but it def won't always hit the 90 minute cap. 
-
-What I'm saying is be flexible and think about what works well given my use case, the difficulty of the task, how well scoped the task is, whether a task should be broken down to different problems with different goals/metrics/definitions of success. etc. 
-
-I'm still figuring this out. 
 
 Set goals rigorously
 
