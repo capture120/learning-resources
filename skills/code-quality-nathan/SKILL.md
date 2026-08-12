@@ -46,8 +46,6 @@ All code should read like a paragraph and be intuitive from top to bottom
 
 Every file reads like a paragraph. 
 
-Organize each file so a developer reading top-to-bottom understands it without scrolling back up.
-
 Put the main most important function in the file near the top (global constants above, function specific constants below, function specific interfaces above their respective functions, interfaces types at top). 
 
 Put the functions it calls below it, in the order they are called. 
@@ -56,18 +54,6 @@ Put low-level details at the bottom. A reader should never encounter a function 
 
 The same principles apply at the class and function level.
 
-
-Adhere strongly to the single responsibility principle. 
-
-Every file, function, class, and directory should have a single purpose.
-
-Names should be self-documenting. 
-
-A dev should be able to only read file/function/class names and immediately understand the purpose.
-
-Bad names force devs to read the implementation code.
-
-If it's not immediately obvious to understand what a file does, that is a sign that SRP is being violated.
 </code_quality>
 
 <comments>
@@ -80,8 +66,6 @@ If a dev reads the comment and never reads the code, they'd still understand wha
 Do not focus on how the code is implemented. 
 
 Focus on the impact of WHAT the code does.
-
-Always focus on the impact the code has first.
 
 NAME THE SUBJECT: when a comment refers to something, call it by its name. 
 
@@ -99,7 +83,7 @@ A new dev who reads the variable must understand what the feature is from the co
 
 Define each domain term the first time the comment uses it.
 
-Comments should be as small as possible and used sparingly.
+Comments should be as small as possible, while still retaining core meaning.
 
 Comments should follow the same principles of a good function name.
 
