@@ -14,3 +14,5 @@ Good abstractions and hierarchical organization of data exist because they optim
 Agents are pretty good at pattern matching, and so establishing strong interface boundaries and code organization norms is a very token-efficient way to get agents to do the right thing. It also means that your skills/config can be more efficient, containing hints/pointers to help the agent leverage the code and structure you establish.
 
 Agents change a lot, but many good practices remain just as good as they always were"
+
+"Periodically do human review of all of the major interfaces, and the overall repository organization, and use the agent to refactor things into the correct shape ( it's very good at this sort of work). You want to build a strong and obvious  "pattern" for the agent to follow."
