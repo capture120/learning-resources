@@ -1,5 +1,5 @@
 ---
-name: investing-in-core-abstractions-nathan
+name: core-abstractions-nathan
 description: on why to invest heavily into core abstractions
 ---
 
