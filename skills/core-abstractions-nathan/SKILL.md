@@ -16,3 +16,8 @@ Agents are pretty good at pattern matching, and so establishing strong interface
 Agents change a lot, but many good practices remain just as good as they always were"
 
 "Periodically do human review of all of the major interfaces, and the overall repository organization, and use the agent to refactor things into the correct shape ( it's very good at this sort of work). You want to build a strong and obvious  "pattern" for the agent to follow."
+
+"Capture major system design choices in traditional "design doc" style as markdown in the repo."
+
+"Write a design document (with the same care that you would for a team of humans). Include things like tech choices and invariants"
+"Ask the agent to make an implementation plan, decompose the plan into work items and record them (consider a local issue tracker)"
