@@ -29,3 +29,9 @@ to consider (not exhaustive)
 - server actions/load
 - types / interfaces
 - high risk boundaries
+
+
+
+# Other
+
+"Good engineering deliberately turns complex problems into small, constrained, independently verifiable ones. “Basic” is not necessarily a property of the original problem; it can be the product of good decomposition, architecture, and tooling."
