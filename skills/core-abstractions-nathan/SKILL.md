@@ -28,3 +28,4 @@ to consider (not exhaustive)
 - data model (eg database)
 - server actions/load
 - types / interfaces
+- high risk boundaries
