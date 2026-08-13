@@ -39,6 +39,36 @@ From Terrence Tao
 * **Play with problems** - “‘Playing’ with a problem, even after you have solved it, is very helpful … The long-term goal is to increase your understanding of a subject.” “You have to play with it, you have to tinker with it in order to really make it your own.”
 * **Build my toolkit**
 
+Bulletpoint only version
+- **Brain Dump**
+- **Speak Out Loud & Draw**
+- **Understand the data.**
+- **Understand the objective.**
+- **Test examples should be as basic as possible**
+- **Explain the problem**
+- **Abstract away any information that you believe or suspect to be irrelevant.**
+- **Decompose or approximate data into a simpler one.**
+- **Work on the strategy … split up complicated → mini-problems**
+- **Reduce a problem into successively simpler sub-problems**
+- **One difficulty at a time**
+- **Try simpler cases first…** if unexpectedly easy, but cannot extend methods to the general case true difficulty is elsewhere
+- **Partial Progress**
+- **Use Analogies** try to isolate the simplest metaphor for for your problem
+- **Draw pictures and build counterexamples** the way in which your picture fails to accomplish this task is often very instructive.
+- **Ask Dumb questions**
+- **Pause and recall why you are pursuing a particular goal**
+- **If deep and difficulty, consider revising notation**
+- **Trial and error is one of the most important aspects of problem solving** … eliminate certain strategies. isolate key difficulties … every fail, see what the solution must look like.
+- **Anthropomorphising the ‘enemy’—as well as one’s ‘allies’**
+- **Try solving a problem that is just out of reach with your solution, but is solvable with a different method**
+- **If the conclusion and hypotheses look close, expand out all the definitions and follow first principles**
+- **Rigor is not to destroy all intuition; instead, it should destroy bad intuition while clarifying good intuition.**
+- **If proving ambitious claim, look for a counterexample**
+- **When stuck … write up how far I managed to get, then do something else**
+- **Know when to step away**
+- **Modify the problem… By changing the language of your problem, you are activating different areas of your brain**
+- **Play with problems**
+
 From Andrej Karpathy
 "For general problem solving intuitions alone:
 - modeling systems with increasingly more complex terms
