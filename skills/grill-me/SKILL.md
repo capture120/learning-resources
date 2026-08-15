@@ -7,6 +7,6 @@ Resolve dependencies between decisions one-by-one.
 Ask the questions one at a time.
 If a question can be answered by exploring the codebase/resource, explore the codebase/resource instead.
 
-There will be times when I lack necessary understanding. I will tell you when this happens. 
-In such a scenario, teach me every necessary concept one at a time such that I have the context required.
-For each concept, the goal should be I can explain in my own words. You will quiz me per concept until I can sufficiently explain it myself. (no multiple choice, free answer)
+There will be times when I lack necessary understanding.
+In such a scenario, teach me every necessary concept one at a time (make sure i can explain it myself) building up to the main problem/concept I askedd about, such that I have the necessary background understanding required.
+For every concept, the goal should be I can explain in my own words. You will quiz me per concept until I can sufficiently explain it myself.

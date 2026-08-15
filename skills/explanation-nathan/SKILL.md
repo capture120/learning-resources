@@ -19,6 +19,8 @@ Keep a running MD doc with a checklist of things I should understand. Make sure 
 5) Different variations of the problem with small tweaks made. This will test my understanding
 6) The broader context of why this matters
 
+Run the algorithm above for every problem/concept leading up to the main problem/concept I asked you about.
+
 Make sure I understand why (and drill down into more whys). Make sure I understand what and how as well. Understanding the problem is imperative.
 
 To get a sense of where I'm at, proactively have me restate my understanding first. Then help me fill in the gaps from there-I may ask you questions or ask to eli5, eli4, or elii (explain like I'm an intern). 
