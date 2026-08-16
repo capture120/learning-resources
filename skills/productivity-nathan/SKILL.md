@@ -40,3 +40,6 @@ Strategies that work for me:
 These are just the strategies that work for me - I’d love to hear what works for others, and expect it vary a lot between people. The message I want you to take from this post is just to notice when you next push the Try Harder button. And ask yourself: “am I just being virtuous and trying? Or am I trying to change what my future self actually does?”
 
 """
+
+For me personally, I'll be using Linear as a todo list / breaking down projects or things i need to do into concrete steps.
+Linear also helps me add priorities, due dates, etc. It should be capable for doing a lot of the recommendations on here. 
