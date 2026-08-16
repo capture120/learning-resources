@@ -4,6 +4,7 @@ description: don't press the try harder button. use certain setup to get goals c
 ---
 
 """
+https://www.neelnanda.io/blog/mini-blog-post-6-stop-pressing-the-try-harder-button
 
 Planning, as I define it, is about ensuring that the future goes the way I currently want it to. And the error I made was that, implicitly, I was trying to make the future go the way I currently wanted it to. That by committing to do things, and wanting to them, and just applying effort, things would happen. And the end result of this was that I totally forgot about it. Or sometimes, that I vaguely remembered the commitment or idea, and felt some guilt about it, but it never felt urgent or my highest priority. And every time I thought about the task, I resolved to Try Harder, and felt a stronger sense of motivation, but this never translated into action. I call this error Pressing the Try Harder button, and it’s characterised by feelings of guilt, obligation, motivation and optimism.
 
