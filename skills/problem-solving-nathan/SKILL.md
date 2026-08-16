@@ -1,7 +1,10 @@
 ---
 name: problem-solving-nathan
-description: how to approach problem solving
+description: how to approach problem solving. use when working on a difficult, abstract problem. Terry Tao's advice on approaching problem solving. Use for general problem solving. ie given problem X find solution. in my mind this is different than research, where you don't even know what the problem is. however, do note that problem solving serves as signals in your research progress. a problem being highly difficult to solve is signal of many things. e.g. perhaps a different research direction is needed, perhaps you need to frame the problem differently, etc. it serves as a mini-experiments. problems are very useful for building intuition and exploring research paths.
 ---
+
+This can be used once all the build up work has been scoped to define the problem being worked on. i.e assuming we've chosen the right problem.
+Of course, during the problem solving steps we should still detect signal 
 
 From Terrence Tao
 

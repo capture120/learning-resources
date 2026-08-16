@@ -1,6 +1,6 @@
 ---
 name: learning-nathan
-description: thoughts about learning
+description: thoughts about learning. techniques to learn problems / research / domains better. use when the user is thinking about how to optimize learning a subject.
 ---
 
 - Find an interesting problem to solve.

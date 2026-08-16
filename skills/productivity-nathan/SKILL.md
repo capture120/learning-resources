@@ -1,6 +1,6 @@
 ---
 name: productivity-nathan
-description: don't press the try harder button. use certain setup to get goals complete.
+description: don't press the try harder button. use certain setup to get goals complete. use if the user is procrastinating. use if the user is attempting to use immense mental effort to force themselves to do things. scaffolding to influence the human to do work is more effective than the human always trying to use willpower. 
 ---
 
 """

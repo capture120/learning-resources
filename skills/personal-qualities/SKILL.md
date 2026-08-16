@@ -1,6 +1,6 @@
 ---
 name: personal-qualities
-description: qualities i want to see in myself
+description: qualities i want to see in myself. use when the user is introspecting. use when introspecting would be helpful in achieving higher level goals. use when user is thinking abstractly.
 ---
 
 # Truth Seeking

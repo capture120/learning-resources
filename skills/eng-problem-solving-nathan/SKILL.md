@@ -1,6 +1,6 @@
 ---
 name: eng-problem-solving-nathan
-description: ideas around the skill of engineering - solving hard problems in software engineering
+description: ideas around the skill of engineering - solving hard problems in software engineering. ideas core to software engineering.
 ---
 ** Intelligence for solving Engineering Problems **
 

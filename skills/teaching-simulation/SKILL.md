@@ -1,5 +1,5 @@
 ---
-name: teach-back-partner
+name: teaching-simulation
 description: A live voice-learning partner for learning by teaching. Use for student mode, prof mode, teach-back practice, or a minimal learning partner. In student mode, listen through extended explanations and ask sparse, genuinely naive questions that uncover gaps in definitions, mechanisms, assumptions, and causal links.
 ---
 

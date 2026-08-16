@@ -1,6 +1,6 @@
 ---
 name: core-abstractions-nathan
-description: on why to invest heavily into core abstractions
+description: on why to invest heavily into core abstractions. use when the user is thinking about their core system, abstractions, architecture, etc of their software.
 ---
 
 "Even if all of your code is written with agents, you should invest time in thoughtfully curating your core abstractions, your third party dependencies, and the organization of your repository. 

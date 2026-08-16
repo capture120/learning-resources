@@ -1,6 +1,6 @@
 ---
 name: how-much-ai-code-to-review
-description: guideline for how much of PR code to review. also when to review PRs made by AI
+description: guideline for how much of PR code to review. also when to review PRs made by AI. use when the user is considering what core code to spend their time reviewing and what code that knowing the intention + impact is enough.
 ---
 "my hot take on how much AI code we should review -
 

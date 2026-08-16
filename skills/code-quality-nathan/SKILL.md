@@ -1,6 +1,6 @@
 ---
 name: code-quality-nathan
-description: skill to evaluate code quality. function names, code comments, variable names, etc.
+description: skill to evaluate code quality. function names, code comments, variable names, etc. use when the user is reviewing code quality.
 ---
 
 <code_quality>

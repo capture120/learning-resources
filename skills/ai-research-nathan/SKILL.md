@@ -1,6 +1,6 @@
 ---
 name: ai-research-nathan
-description: advice for ai research
+description: advice for ai research. use when the user is doing AI research. use to guide the user to perform good, tasteful research.
 ---
 
 # ilya
