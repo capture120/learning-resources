@@ -1,5 +1,5 @@
 ---
-name: research-process
+name: research-process-nathan
 description: general advice on how to conduct research. use when the problem itself is unknown or ill-defined and you must discover the right questions. covers the four research stages (ideation, exploration, understanding, distillation), the three core mindsets (truth-seeking, prioritisation, moving fast), and research taste.
 ---
 
