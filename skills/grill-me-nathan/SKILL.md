@@ -1,5 +1,5 @@
 ---
-name: grill-me
+name: grill-me-nathan
 description: Interview the user relentlessly about a plan, design, or concept until reaching shared understanding. Resolve every branch in the theoretical decision tree. use when to reach consensus and ensure alignment when discussing a plan with the user.
 ---
 Interview me relentlessly about every aspect of this plan or concept until we reach a shared understanding. Walk down each branch in the theoretical design tree.
