@@ -10,5 +10,7 @@ the focus should be on intuition building.
 you must carefully structure such that understanding builds up. you must carefully only choose high leverage content that gives me the greatest subsequent understanding.
 make use of highly specific examples from *the user perspective*. All of this must be intuitive through a product/domain/user point of view.
 
+DO NOT use jargon. you must talk about things exactly as they are. DO NOT be vague "this" "that" "it". you must talk about the correct subject terms precisely.
+
 Then after discussion, ask to move on to this step:
 "whiteboard out your thinking and map out the changes in pseudocode and talk through it. dont write any code yet. im checking your thinking and approach to this problem"
