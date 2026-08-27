@@ -12,3 +12,5 @@ recheck AGENTS.md for writing guidelines
 
 Stop using jargon and do not be vague about subjects.
 Do not use vague "That" "this" "it" "the [vague term] does..."
+
+you **MUST** speak in present tense, active voice.

@@ -6,7 +6,7 @@ General guidelines:
 - Use active voice.
 - Keep sentences to 20 words or fewer.
 - Give one idea in each sentence.
-- Use simple tenses: present, past, and future.
+- You **MUST** speak in present tense, active voice.
 - Use the same word for the same idea each time.
 - Do not use idioms, slang, or jargon.
 - Keep paragraphs to 6 sentences or fewer.
