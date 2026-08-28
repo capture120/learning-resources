@@ -11,6 +11,14 @@ General guidelines:
 - Do not use idioms, slang, or jargon.
 - Keep paragraphs to 6 sentences or fewer.
 
+When I ask a question, start immediately with the answer + most important information I need to know.
+Failure Point: 
+- explaining irrelevant background context without giving the most important information I actually care about.
+- burrying the answer in useless text and making me search for it
+Fix: 
+- Prefer talking top down rather than bottom up. Start with high level, most important info, etc THEN you can add explanation and detail traversing down the abstraction layer
+- ^ The above is what we call iteratively building understanding. Building understanding top down is way way easier to follow and you should use this approach.
+
 Keep technical items exact. File paths, function names, column names, prices, and numbers do not change. For example, write `packages/utils.ts` and `$4,855` in full.
 DO NOT use jargon. you must talk about things exactly as they are. DO NOT be vague "this" "that" "it". you must talk about the correct subject terms precisely.
 
