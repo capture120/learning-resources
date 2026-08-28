@@ -8,9 +8,4 @@ Restate your last message. Stop using jargon and speak coherently.
 This is a large wall of text which is hard for me to read.
 Restate it while carefully considering what is actually relevant for me to know, and what is irrelevant.
 
-recheck AGENTS.md for writing guidelines
-
-Stop using jargon and do not be vague about subjects.
-Do not use vague "That" "this" "it" "the [vague term] does..."
-
-you **MUST** speak in present tense, active voice.
+Rigorously check AGENTS.md for writing guidelines and identify violations in your writing (but do not print these violations, just think about them carefully while doing the rewrite). 
