@@ -3,8 +3,6 @@ name: new-company-usefulness-nathan
 description: being useful at a new company (applies to all levels). working with velocity.
 ---
 
-https://x.com/spakhm/status/2087162661481898093
-
 """
 On what to do (and not to do) when starting a new job. Surprisingly scales from intern to director, maybe further. You want to run two parallel threads:
 
@@ -38,3 +36,4 @@ Failure modes (do _not_ do this):
 - going into "learning mode" and not solving anything. You need to learn and solve problems in parallel, that's how you build up credibility and earn people's trust.
 - going into "solving mode" and not talking to anyone. People need to know about what you're working on, and you need to understand their problems to do good work.
 """
+https://x.com/spakhm/status/2087162661481898093

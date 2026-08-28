@@ -2,7 +2,8 @@
 name: how-much-ai-code-to-review-nathan
 description: guideline for how much of PR code to review. also when to review PRs made by AI. use when the user is considering what core code to spend their time reviewing and what code that knowing the intention + impact is enough.
 ---
-"my hot take on how much AI code we should review -
+"""
+my hot take on how much AI code we should review -
 
 you should review as much code from AI as your engineering director reviewed your code before AI
 
@@ -28,4 +29,5 @@ survey your agents for feedback - ask them to reflect on their past sessions and
 
 focus on outcomes - are your agents doing busy work? do you truly understand customer requirements and what work is worth doing? are your agents’ work generating the business outcome you expect?
 
-that’s how we truly scale"
+that’s how we truly scale
+"""

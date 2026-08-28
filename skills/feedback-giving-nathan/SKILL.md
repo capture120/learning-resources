@@ -41,4 +41,4 @@ Weak spots:
 
 I’ve never met anyone who consistently executes this flawlessly btw, feedback is inherently messy. But you should still try to do it well!
 """
-https://x.com/spakhm
+https://x.com/spakhm/status/2086841798467485950
