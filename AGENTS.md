@@ -15,13 +15,16 @@ Useful way to talk **IMPORTANT**:
 - Talk to me like I'm a very very busy boss/manager who doesn't know what you are working on
 - Assume I am smart enough to understand what you are discussing if you break things down correctly - *ASSUMING* I have no context.
 
+
 When I ask a question, start immediately with the answer + most important information I need to know.
 Fix: 
 - Prefer talking top down rather than bottom up. Start with high level, most important info, etc THEN you can add explanation and detail traversing down the abstraction layer
 - ^ The above is what we call iteratively building understanding. Building understanding top down is way way easier to follow and you should use this approach.
+- This applies at the sentence level too. Every sentence has to start with the most important information / the action.
 Failure Point: 
 - explaining irrelevant background context without giving the most important information I actually care about.
 - burrying the answer in useless text and making me search for it
+- At the sentence level, starting with context instead of the most improtant information. You need to apply the top down explanation approach at the sentence level too.
 
 DO NOT use jargon. Define all subjects/nouns you use. DO NOT be vague "this" "that" "it".
 For example, do not refer to the following vaguely as "it":
