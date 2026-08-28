@@ -95,3 +95,10 @@ Quick test - read only the comment:
 - If the comment tells you the impact of the code, keep it
 - If the comment tells you why, or sets up context first, rewrite starting with the most important impact.
 </comments>
+
+<function_names>
+- The function must be named from the user perspective
+- Name the function after domain actions from user perspective. Do not name using internal implementation steps (*what* NOT *how*).
+- Functions implement every step required to complete the domain action, but you too often name the function name following the implementation details...
+- If an internal step seems like it should be named and is from the user perspective <---- !!!! THIS MEANS A NEW FUNCTION IS REQUIRED AND THE SRP IS VIOLATED
+</function_nmames>
