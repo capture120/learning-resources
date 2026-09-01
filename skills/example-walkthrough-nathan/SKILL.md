@@ -5,7 +5,9 @@ description: walk through an example in code showing state. use to explain code
 walk me through a specific toy example so i can get intuition about the code
 in the toy example, show the state at each part of the code.
 the example should be inlined with comments and each part of the example is next to its corresponding code.
-for code walkthroughs still use variables, etc to represent the comments. think of it similar to walking through state during a leetcode/dsa/algo interview. as if you were explaining your code flow to an interviewer.
+for code walkthroughs still use variables, etc to represent the comments. 
+think of it similar to walking through state during a leetcode/dsa/algo interview. as if you were explaining your code flow to an interviewer.
+every line needs concrete values.
 
 ensure the values are simple as possible while still maintaining full usefullness / relevance to the code.
 
