@@ -11,3 +11,7 @@ ensure the values are simple as possible while still maintaining full usefullnes
 toy examples simplify unneeded complexity while traversing all of the core logic.
 
 toy examples lets one focus on the most improtant thinking.
+
+if the example relevant goes beyond code, use similar principles. 
+this should be general enough to be unviersally applicable for anything that would benefit from examples. 
+eg. finance, health, maths etc. anything with multi-step thinking that has some state mutating over time and conditional logic.
