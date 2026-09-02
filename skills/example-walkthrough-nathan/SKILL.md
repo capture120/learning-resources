@@ -21,3 +21,19 @@ toy examples lets one focus on the most improtant thinking.
 if the example relevant goes beyond code, use similar principles. 
 this should be general enough to be unviersally applicable for anything that would benefit from examples. 
 eg. finance, health, maths etc. anything with multi-step thinking that has some state mutating over time and conditional logic.
+
+Here's an issue I had in the past with the code example...
+```
+# my prompt
+"""
+somehow in this example i feel a little lost. i think it's because you didn't provide context for where these steps are taking place. what functions. what part of what process. etc. i lack a lot of context and the way you are representing the state overtime is getting confusing. you say just "the old object" when i told you to be concrete. do not make this mistake again please. 
+"""
+
+# issues you identified
+"""
+I did not show the full function call path first.
+I did not label each step with its function and process stage.
+I used vague names such as “the claim.”
+I mixed database state, calculated state, and submitted state without clear boundaries.
+"""
+```
