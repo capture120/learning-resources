@@ -14,7 +14,12 @@ Rules:
 - Each bullet is one high-impact decision. Leave out low-impact details. If the importance is unclear, clarify with the user. Lean towards clarification rather than missing a key change.
 - "How did you verify" and "Risks" are one or two sentences each.
 - Any PR with UI changes should include screenshots or a video of the changed UI in the description.
+
+Style:
+- The description should be written in ASD-STE100 Simplified Technical English
 - Do not invent labels for concepts. Use plain words for what happens.
+- For technical or domain specific concepts, use the wording our team does. Use already-existing terminology. Do not make up your own.
+- Use soft wrapping in markdowns.
 
 PR Description Structure. Each one is a header:
 1. Why this PR?
