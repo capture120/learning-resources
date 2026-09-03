@@ -18,6 +18,8 @@ toy examples simplify unneeded complexity while traversing all of the core logic
 
 toy examples lets one focus on the most improtant thinking.
 
+make sure all toy examples are concrete values though.. eg in code use concrete values in the shape youd see them when running the code. the toy part for example is a list being smaller but the shape of the elements still exist.
+
 if the example relevant goes beyond code, use similar principles. 
 this should be general enough to be unviersally applicable for anything that would benefit from examples. 
 eg. finance, health, maths etc. anything with multi-step thinking that has some state mutating over time and conditional logic.
