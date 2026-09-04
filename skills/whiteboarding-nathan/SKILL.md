@@ -10,7 +10,6 @@ Do not use it only to present a finished explanation.
 The goal is to iteratively build understanding. 
 Like how a senior engineer would pair with another engineer on a problem, explaining concepts, etc using a whiteboard.
 
-
 - Use the user's existing tldraw tab in the browser.
 - Control the tab directly from the coordinator.
 - Do not delete or replace the user's drawings without permission.
@@ -29,15 +28,7 @@ The core point is to represent 1 core idea with the shapes/relationships/pseudoc
 
 Do not draw the full solution before the user understands the starting state.
 Do not give a spoken wall of text while the board stays unchanged.
-For each iteration it's helpful to look at the style guidelines here:
-
-## Start with context
-
-Use one plain sentence before code.
-
-Define every domain term before using it.
-
-Follow existing naming conventions in the codebase.
+For each iteration it's helpful to look at the style guidelines in the AGENTS.md
 
 ## Verify before drawing
 
