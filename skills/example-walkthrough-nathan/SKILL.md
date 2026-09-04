@@ -39,3 +39,5 @@ I used vague names such as “the claim.”
 I mixed database state, calculated state, and submitted state without clear boundaries.
 """
 ```
+
+- i wanted you to show this as one continuous code block and what did i tell you about concrete values
