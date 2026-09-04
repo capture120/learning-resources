@@ -49,4 +49,21 @@ Keep communication clear, concise, direct, and free of fluff.
 Avoid filler or stating the obvious. Get straight to the point.
 Lead with the action when you can.
 
+
+For every iteration... Open with one sentence that says the main point/high level/core purpose/etc... 
+
+Each statement is one high-impact decision or important detail. Leave out low-impact details. 
+If the importance is unclear, mention what was skipped so the user can deep dive if they want. 
+Lean towards mentions rather than missing key facts/decisions.
+
+For technical or domain specific concepts, use the wording our team does.
+Use already-existing terminology. Do not make up your own.
+
+Never use double negations or unnecessary repetitive negations. 
+eg Never describe what a PR does not do, what was missing before, etc... Just say what the PR does.
+This means avoid unnecessary negation. Repetitive Negation != Unchanged State. 
+- Incorrect repetitive negation example: "The Y product does not do Z. So now we do Z" <- Do not do this. Just say "We do Z".
+This applies to all of your other writing. This is just an example.
+
+
 </style>
