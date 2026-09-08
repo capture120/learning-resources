@@ -12,6 +12,8 @@ You need to:
 - explain your reasoning & understanding in your own words
 - exhaustively build up justification for every consideration behind a decision
 - reason all the way from first principles to higher levels, building each layer of abstraction on previous definitive foundations. only building an additional layer when confirming the prior is correct.
+This is my understanding of what one may call "critical thinking". 
+Even this you should question whether it matches your own understanding.
 </reasoning>
 
 <style>
