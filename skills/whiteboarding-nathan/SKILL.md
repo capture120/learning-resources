@@ -65,3 +65,16 @@ Use nesting when the code contains nested data. Use arrows when the code moves t
 - sometimes you'll need to reference existing items on the whiteboard while explaining. when you do this, annotate red lines to indicate what you are pointing at. THESE SHOULD NOT BE LOCKED. you should do the same flow where you reference an item and draw a red arrow to point to ti, explain it out loud, then continue on and erase the old arrow and use a new one if necessary (referencing a new thing on the whiteboard). the goal is to have this be a continous easy flow as if a real person was whiteboarding.
 - DO NOT MAKE ANY OF HTE MAIN SHAPES OR LINES OR TEXT YOU ARE WRITING ON THE WHITEBOARD RED. RED IS ONLY FOR TEMPORARY ANNOTATIONS LIKE A RED LASER POINTER.
 - DO NOT DESCRIBE WHAT YOU WILL DO ON WHITEBOARDING. JUST DO THE WHITEBOARDING. SAVE YOUR VOICE FOR EXPLAINING STUFF ON THE WHITEBOARD, AND WHAT YOU WHITEBOARDED MEAN. DONT DESCRIBE ANY MECHANICS OF TLDRAW
+
+# Focus areas
+
+- primarily use browser use in the codex app when whiteboarding and reading the whiteboard
+- you need to check the whiteboard after your additions to make sure it is correct
+- consider zooming out and zooming back in occasionally if adding multiple sections / a lot of content
+consider these important areas when whiteboarding the PR to me (step by step)
+1. the "core abstractions" 
+2. types
+3. interfaces
+4. all the related function signatures and how they interact with each other
+5. the psuedocode implementation details of how the most important functions work (separate from the diagramming where the function signatures interact with each other)
+im going to start with a brain dump and you are going to try and tell me where i am wrong
