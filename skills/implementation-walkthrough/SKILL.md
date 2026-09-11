@@ -37,5 +37,19 @@ some main focuses we care about (non-exhaustive):
 - server actions/load
 - high risk boundaries
 - performance
+
 Step 5
-run /grill-me so i understand all of the prior parts before beginning. this will ensure we are aligned on everything.
+Record our first approach in an MD file. 
+Then run an adversarial review subagent with the focus on critiquing our approach.
+Explain the results of the critique and we will discuss in depth.
+For every new approach we come across and discuss, record into the MD file as a possible approach with benefits and tradeoffs.
+
+A flow may look like this:
+- Run critique on approach
+- Detect and discuss gaps identified by adversarial review
+- Come up with new approaches to possibly address gaps + understand tradeoffs. Record these approaches and also record the tradeoffs with the first approach.
+- Loop with the adversarial review (default 1 additional time 2 times total to not get stuck)
+- Choose a final approach accounting for the tradeoffs
+
+Step 6
+Run /grill-me on the final approach we choose so i understand to ensure we are aligned on everything.
