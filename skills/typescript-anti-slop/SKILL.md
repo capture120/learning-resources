@@ -5,6 +5,8 @@ description: Review or write TypeScript/JavaScript against the anti-slop rules (
 
 # anti-slop
 
+Source: [dmmulroy/anti-slop](https://github.com/dmmulroy/anti-slop) (MIT). Every rule description, violation example, and diagnostic message below is quoted from that repository's `README.md`, `src/rules/*.ts`, `src/effect/rules/*.ts`, and `skills/install-anti-slop/SKILL.md`.
+
 Opinionated Oxlint rules that reject low-evidence and low-signal TypeScript and JavaScript patterns.
 
 The upstream author writes: "Anti-slop is first and foremost the ruleset I use with my work, projects, and team. It reflects my preferences and taste rather than attempting to be a universal coding standard."
@@ -22,7 +24,7 @@ Follow every rule by default. When a rule blocks the only reasonable design, wri
 ### When reviewing code
 
 1. Read the diff or file set.
-2. Read the repository's Oxlint config (`jsPlugins`, `rules`) and the vendored plugin's `UPSTREAM.md`. Apply only the enabled rules, and apply any recorded intentional deviations over the wording below.
+2. Read the repository's Oxlint config (`jsPlugins`, `rules`), or the `lint` block of a Vite+ config, and the vendored plugin's `UPSTREAM.md`. Apply only the enabled rules, and apply any recorded intentional deviations over the wording below.
 3. Walk each rule below. Search the code for the rejected pattern.
 4. Check each hit against the rule's scope before you report it.
 5. Report findings with the format below, grouped by tier.
@@ -86,6 +88,7 @@ A single `flatMap(user => user.active ? [user.email] : [])` or a reducer that pu
 This AST/scope rule recognizes array literals, direct array/tuple annotations, immutable local aliases, and supported array-preserving method chains. Unknown receivers (including imported factory results and unannotated parameters), type aliases, and property-based array types are not inferred. Iterator pipelines are not flagged. Both `filter().map()` and `map().filter()` are covered, regardless of predicate. There is no autofix: callback ordering, indexes, `thisArg`, sparse arrays, and truthiness filtering must be reviewed before changing APIs.
 
 **Scope notes:**
+- Array annotations include `T[]`, `readonly T[]`, `Array<T>`, `ReadonlyArray<T>`, and tuples, including on parameters. A union annotation such as `User[] | undefined` is not array evidence.
 - `.map().map()` and `.filter().filter()` are not filter/map passes. They are outside the rule.
 - Unknown receiver types are deliberately not inferred by this AST/scope rule. As a reviewer you may read the receiver's type and flag it anyway; say the linter would not.
 - Only a `const` binding is traced through its initializer. `let users = []` is never a known receiver, even when never reassigned. A `let` binding with an array annotation (`let users: User[] = load()`) counts only when never reassigned.
@@ -127,7 +130,7 @@ Enable native `oxc/no-accumulating-spread` alongside it for array/object spreads
 
 **Scope notes:**
 - Local array evidence for the initial value means an array literal, an array or tuple annotation, or an immutable local alias of one. `acc.concat(item)` with a string initial value, an unknown collection, or no initial value is not flagged.
-- The alias must be a `const` binding. An annotated `const init: Item[] = load()` counts. A `let initial = []` alias is never evidence. A chain such as `seed.slice()` counts only when `seed` is itself known.
+- Only a `const` binding is traced through its initializer, so a `let initial = []` alias is never evidence. An annotated binding counts when never reassigned: `const init: Item[] = load()` and `let init: Item[] = load()` both count. A chain such as `seed.slice()` counts only when `seed` is itself known.
 - `Object.assign({}, acc, ...)` and `Array.from(acc)` are flagged regardless of the initial value. Only the array copy methods (`concat`, `slice`, `toSpliced`, `toSorted`, `toReversed`, `with`) need array evidence.
 - An immutable local alias of the accumulator (`const alias = acc; return alias.concat(item);`) is flagged as the accumulator.
 - A copy inside a nested function or arrow within the reducer body is outside its scope. Only the reducer's own body counts.
@@ -209,11 +212,11 @@ Call the predicate at the unparsed boundary, while the argument is still `unknow
 - The diagnostic's target word is one of `unknown`, `object`, `anonymous object`, `open dictionary`, or `generic container`. The subject is `binding \`x\``, `property \`x\``, `return value of \`fn\``, `assertion`, or `argument for parameter \`p\` of \`fn\``.
 - A known expression is an object, array, function, class, `new`, literal, template, or unary expression, or a `const` that chains to one of those. A call result, a parameter, or a `let` binding is not known, so `const h: Record<string, Handler> = make()` passes the linter.
 - Unary expressions count as known: `const value: unknown = -1;`, `const value: unknown = !flag;`, and `const value: unknown = typeof flag;` are rejected.
-- For the type-predicate flow, annotated bindings, parameters, and local call results with an informative type also count as known. An argument asserted to an informative type, such as `isUser(x as User)`, also counts.
-- Targets: `unknown`, `object`, a non-empty anonymous object type, and an open dictionary (`Record` over `string`, `number`, `symbol`, or `PropertyKey`; an index signature; an inline mapped type over any key). Same-file aliases resolve to these, through default type parameters and `Readonly`/`Partial`/`Required`/`NonNullable`. `type Open = Record<string, Command>` is still an open dictionary. `any` and `{}` are not targets of this rule.
+- For the type-predicate flow, annotated bindings, parameters, and local call results with an informative type also count as known. An argument asserted to an informative type, such as `isUser(x as User)`, also counts. An informative type is any annotation other than `unknown`, `any`, `object`, `{}`, a union containing one of those, or a same-file alias to one; `Record<string, string>` is informative.
+- Targets: `unknown`, `object`, a non-empty anonymous object type, and an open dictionary (`Record` over `string`, `number`, `symbol`, or `PropertyKey`, or a key union that contains one of those such as `Record<string | 'start', Command>`; an index signature; an inline mapped type over any key). Same-file aliases resolve to these, through default type parameters and `Readonly`/`Partial`/`Required`/`NonNullable`. `type Open = Record<string, Command>` is still an open dictionary. `any` and `{}` are not targets of this rule.
 - A mapped type reached through an alias counts only when its key is wide. `type Levels = { readonly [L in Permission]: number }` with a finite `Permission` key is not a target.
 - A generic alias counts only when its body resolves to an open dictionary, and the diagnostic then names the target `generic container`. `type Box<T> = unknown; const x: Box<number> = {};` is not a target.
-- Flows: a variable annotation, a class field or accessor initializer, a later `=` assignment to an annotated binding, a `return` or arrow body against a declared return type, an `as` or `<T>` assertion, and the argument of a local `unknown` type predicate. Ordinary call arguments are not flows.
+- Flows: a variable annotation, a class field or accessor initializer, a later `=` assignment to an annotated binding, a `return` or arrow body against a declared return type, an `as` or `<T>` assertion, and the argument of a local `unknown` type predicate or assertion function (`asserts value is T`). Ordinary call arguments are not flows.
 - The empty dictionary accumulator exemption (`const acc: Record<string, Item> = {}`) applies to dictionary targets only. `const value: unknown = {}` is rejected.
 - The exempt `{}` must be written inline in the flow. `const empty = {}; const acc: Record<string, Command> = empty;` is rejected.
 - A named owner contract is an `interface` or an alias to a closed object type, such as `type Handlers = { readonly start: Handler }`. Finite-key targets such as `Record<"a" | "b", Handler>` remain valid.
@@ -231,7 +234,7 @@ vi.mock("./user-store");
 ```
 
 **Scope notes:**
-- The receiver is the global `vi` or `jest`, or a named-import specifier `{ vi }` from `vitest` or `{ jest }` from `@jest/globals`, under any alias. `import { vi as testApi } from "vitest"; testApi.mock("./x")` is rejected.
+- The receiver is the global `vi` or `jest`, or a named-import specifier `{ vi }` from `vitest` or `{ jest }` from `@jest/globals`, under any import alias. `import { vi as testApi } from "vitest"; testApi.mock("./x")` is rejected. A local re-binding of the import (`const v = vi; v.mock("./x")`) is outside the rule.
 - Namespace imports (`import * as vitest from "vitest"; vitest.vi.mock(...)`), default imports, `const { vi } = await import("vitest")`, and `jest` imported from `vitest` are outside the rule.
 - Only `mock`, `doMock`, and `unstable_mockModule` count. `vi.fn`, `vi.spyOn`, `vi.stubGlobal`, `vi.importMock`, `jest.requireMock`, and `jest.createMockFromModule` are outside the rule. Do not flag them by analogy.
 - `vi["mock"]` with a string literal counts the same as `vi.mock`.
@@ -250,8 +253,9 @@ function save(value: object) {}
 ```
 
 **Scope notes:**
-- Function inputs include function declarations, arrows, function type aliases, interface and type-literal method signatures, call and construct signatures, constructor types, `declare function`, and constructor parameter properties.
+- Function inputs include function declarations, function expressions, arrows, class methods and constructors, overload signatures, function type aliases, interface and type-literal method signatures, call and construct signatures, constructor types, `declare function`, and constructor parameter properties.
 - Generic constraints such as `<Value extends object>` are allowed.
+- Only the `object` keyword counts. `{}`, `Object`, `object[]`, `object & Owner`, and `object` nested inside a generic such as `Readonly<object>` are outside the rule. `object | null` is reported.
 
 ### no-reflect-apply
 
@@ -266,7 +270,7 @@ const value = Reflect.apply(operation, owner, args);
 ```
 
 **Scope notes:**
-- `Reflect["apply"]` counts. A locally declared `Reflect` is not the global.
+- `Reflect["apply"]` counts. Only the bare identifier `Reflect` is checked: a locally declared `Reflect` is not the global, and `globalThis.Reflect.apply(...)` or a local alias (`const R = Reflect; R.apply(...)`) passes the linter. Flag those anyway and say the linter would not.
 
 ### no-reflect-get
 
@@ -281,7 +285,7 @@ const value = Reflect.get(owner, key);
 ```
 
 **Scope notes:**
-- `Reflect["get"]` counts. A locally declared `Reflect` is not the global.
+- `Reflect["get"]` counts. Only the bare identifier `Reflect` is checked: a locally declared `Reflect` is not the global, and `globalThis.Reflect.get(...)` or a local alias (`const R = Reflect; R.get(...)`) passes the linter. Flag those anyway and say the linter would not.
 
 ### no-runtime-typeof
 
@@ -335,7 +339,7 @@ Static member reads such as `schema.shape` are allowed because the member name b
 **Scope notes:**
 - Locally owned symbol names include JavaScript, TypeScript, private, and JSX symbol names: variables, functions, parameters, types, interfaces, class members, `#private` fields, property keys in object and type literals, import specifiers, and destructuring bindings.
 - Only a non-computed member access in value position is exempt: `s.shape`, `s?.shape`, `this.shape`, `outer.inner.shape`. `schema["shape"]` passes because a string literal is not a symbol. `owner[shape]` with an identifier is flagged at the declaration of `shape` and at the use.
-- Qualified type names (`z.ZodRawShape`), imported names even when aliased (`import { shape as fields }`), and JSX attribute names (`<Box shape="round" />`) are flagged.
+- Qualified type names (`z.ZodRawShape`), imported names even when aliased (`import { shape as fields }`), JSX attribute names (`<Box shape="round" />`), and JSX member elements (`<Box.Shape />`) are flagged.
 - `const { shape } = schema` and `const { shape: fields } = schema` both flag `shape`; the destructuring key is a symbol. Assign via a member read instead: `const fields = schema.shape`.
 
 ### no-unknown-parameters
@@ -353,11 +357,12 @@ function handle(input: unknown) {}
 A type predicate may accept `unknown` for the parameter it narrows; other `unknown` parameters on the same function remain rejected.
 
 **Scope notes:**
-- Function inputs include function declarations, arrows, function type aliases, interface and type-literal method signatures, call and construct signatures, constructor types, `declare function`, and constructor parameter properties.
+- Function inputs include function declarations, function expressions, arrows, class methods and constructors, overload signatures, function type aliases, interface and type-literal method signatures, call and construct signatures, constructor types, `declare function`, and constructor parameter properties.
 - The rule reads the annotation literally and does not resolve aliases. `type Input = unknown; function f(value: Input)` is outside this rule; `no-unknown-type-aliases` reports the alias.
 - `unknown` inside a structure is outside the rule: `unknown[]`, `Promise<unknown>`, and `...rest: unknown[]`.
 - The `cause` exemption matches only the binding name `cause`, in any function. `error: unknown` or `err: unknown` in a wrapping helper is rejected.
 - Assertion functions (`asserts value is User`, and bare `asserts value`) count as type predicates for their subject.
+- A `this: unknown` parameter is reported as Parameter `this`. A `this is X` predicate does not exempt it.
 - For destructured parameters the diagnostic names the pattern text, for example Parameter `{ value }`.
 
 ### no-unknown-returns
@@ -395,7 +400,7 @@ type ExternalValue = unknown;
 - Unions containing `unknown` resolve to `unknown`. Every alias whose resolved type is `unknown` is reported, so a re-alias of a rejected alias is a second finding: `type UnknownValue = unknown; type Alias = UnknownValue;` reports both.
 - A transparent generic such as `type Identity<T> = T` is not itself reported; `type Payload = Identity<unknown>;` reports `Payload`.
 - A generic that wraps its argument in a structure is outside the rule: `type Box<T> = { readonly value: T }; type Payload = Box<unknown>;`.
-- No alias name is exempt; `type Cause = unknown;` is reported. The diagnostic's "allowed `cause` field" means an inline `{ cause: unknown }` field.
+- No alias name is exempt; `type Cause = unknown;` is reported. The diagnostic's `cause` wording refers to the exemptions in `no-unknown-parameters` (a parameter named `cause`) and `no-unknown-returns` (`unknown` nested inside a structure such as `{ cause: unknown }`).
 
 ### no-unsafe-dictionary-type
 
@@ -411,14 +416,14 @@ type OtherMetadata = { [key: string]: object };
 ```
 
 **Scope notes:**
-- The diagnostic placeholder is one of `unknown`, `any`, `object`, `empty-object`, or `union`. An intersection reports `any` when any member is `any`, otherwise the first member's token.
+- The diagnostic placeholder is one of `unknown`, `any`, `object`, `empty-object`, or `union`. An intersection reports `any` when any member is `any`; otherwise an intersection is reported only when every member is unsafe, using the first member's token. `unknown & string` and `unknown & ImportedOwner` are outside the rule.
 - Dictionary contracts include `Record` with any key type, index signatures, and mapped types. The key type does not matter; `Record<"a" | "b", unknown>` is rejected.
-- Semantic equivalents: `Readonly<unknown>`, `Partial<unknown>`, `Required<unknown>`, `NonNullable<unknown>`; `Pick` or `Omit` of an unsafe dictionary; an empty type literal, or an interface with a single declaration and no `extends` whose members are absent or only optional `never` brands; and `any & Owner`.
-- Only the direct value type is checked. `Record<string, { payload: unknown }>` and `Record<string, Result<Data, unknown>>` are outside the rule. `unknown & Owner` or `object & Owner` is a contract when `Owner` has real members, has any `extends` clause, or is declared more than once.
+- Semantic equivalents: `Readonly<unknown>`, `Partial<unknown>`, `Required<unknown>`, `NonNullable<unknown>`; `Pick` or `Omit` of an unsafe dictionary; an empty type literal, or a top-level interface with a single declaration and no `extends` whose members are absent or only optional `never` brands; and `any & Owner`.
+- Only the direct value type is checked. `Record<string, { payload: unknown }>` and `Record<string, Result<Data, unknown>>` are outside the rule. `unknown & Owner` or `object & Owner` is a contract when `Owner` has real members, has any `extends` clause, is declared more than once, is imported or undeclared, or is an interface declared inside a function body.
 - `type Index<T> = Record<string, T>` is allowed at its declaration; `Index<unknown>` is reported at the instantiation. `Index<Command>` is allowed.
 - An unsafe default such as `type Index<T = unknown> = Record<string, T>` is reported at each bare `Index` use inside a type alias, not at the declaration.
 - `Map`, `ReadonlyMap`, and `WeakMap` are outside the rule. A local declaration or import named `Record`, `Readonly`, and so on shadows the built-in.
-- The alias is reported once at its declaration. Any use of that alias inside another `type` declaration (`type B = Unsafe`, `type W = { data: Unsafe }`) is a second finding; uses in interfaces, variables, and parameters are not.
+- The alias is reported once at its declaration. Any use of that alias inside another `type` declaration (`type B = Unsafe`, `type W = { data: Unsafe }`) is a second finding; a bare use outside a type declaration (interfaces, variables, parameters, class fields, return types) is not. An applied generic use such as `Index<unknown>` is reported wherever it appears, including parameters and variables.
 
 ### no-widen-then-assert
 
@@ -435,13 +440,13 @@ const user = stored as User;
 ```
 
 **Scope notes:**
-- Known evidence on the source is one of: an annotation on the binding or parameter in the same function; a non-broad `as T`; an object, array, function, class, `new`, literal, or template expression; or an unannotated, never-reassigned `const` in the same function that chains to one of those. An unannotated call result is not evidence. In the example, the `: User` annotation on `loaded` supplies the evidence.
+- Known evidence on the source is one of: a non-broad annotation (not `unknown`, `any`, `object`, or a broad record) on the binding or parameter in the same function; a non-broad `as T`; an object, array, function, class, `new`, literal, or template expression; or an unannotated, never-reassigned `const` in the same function that chains to one of those. An unannotated call result is not evidence. In the example, the `: User` annotation on `loaded` supplies the evidence.
 - The rule's only invalid test has no annotation: `const source = { id: 'second' }; const widened: unknown = source; const parsed = widened as { readonly id: string };` flags because `source` chains to an object literal.
 - The rule does not resolve aliases. `type Json = unknown; const stored: Json = loaded;` is not a widening target here, unlike in no-known-value-widening.
 - Widening through an `as` initializer (`const stored = loaded as unknown;`) counts.
-- A broad record is a wide key (`string`, `number`, `symbol`, `PropertyKey`) with an `unknown` or `any` value. `Record<string, Handler>` is not broad for this rule.
+- A broad record is a wide key (`string`, `number`, `symbol`, `PropertyKey`) with an `unknown` or `any` value. `Record<string, Handler>` is not broad for this rule. A key union counts only when every member is wide; `Record<string | 'a', unknown>` is not broad here, the opposite of `no-known-value-widening`.
 - The widened binding must be `const`, never reassigned, and the later assertion must be on the bare identifier, not a member such as `stored.value`, within the same function.
-- For `unknown` or `any` widening, any non-broad assertion counts as narrower. For `object` or broad-record widening, a named type counts only when its text matches the source annotation or the source `as T` text; otherwise only structural types count.
+- For `unknown` or `any` widening, any non-broad assertion counts as narrower. For `object` or broad-record widening, a named type counts only when its text matches the source annotation or the source `as T` text. Otherwise, for `object` widening the assertion must be an array, tuple, function, constructor, mapped, or non-empty object literal type, or an intersection of those. For broad-record widening it must be an object literal type with a named member, a `Record<K, V>` whose value is not `unknown` or `any`, or `Readonly<>` of one of those.
 
 ### require-safety-comment-for-type-assertion
 
@@ -486,7 +491,7 @@ const userId = value as UserId;
 
 ## Effect rules
 
-Effect-specific rules live in a separate plugin so projects that do not use Effect do not inherit Effect architecture policy. Apply them if the repository declares `effect` in a package manifest, or the user explicitly requests Effect rules. Upstream: "Do not enable the Effect plugin merely because Effect appears transitively in a lockfile; require a direct package-manifest dependency or an explicit user request."
+Effect-specific rules live in a separate plugin so projects that do not use Effect do not inherit Effect architecture policy. When writing code, apply them if the repository declares `effect` in a package manifest, or the user explicitly requests Effect rules. When reviewing, apply them only if `anti-slop-effect` is registered in the lint config (step 2 above) or the user asks. Upstream: "Do not enable the Effect plugin merely because Effect appears transitively in a lockfile; require a direct package-manifest dependency or an explicit user request."
 
 These rules are syntactic. They recognize direct `Effect.catch*` and `Match.when`/`Match.not` calls under those exact identifiers and do not resolve import aliases or verify that similarly named objects came from Effect. `prefer-effect-match` compares the source text of the repeatedly tested expression; it does not infer its type or prove exhaustiveness.
 
@@ -522,6 +527,8 @@ Rejects manual `_tag` comparisons and switches inside broad `Effect.catch`, `Eff
 **Diagnostic (tag):** Use Effect.catchTag or Effect.catchTags instead of manually discriminating a tagged error in a broad Effect catch handler.
 
 **Diagnostic (reason):** Use Effect.catchReason or Effect.catchReasons instead of manually discriminating a tagged `reason` in a broad Effect catch handler.
+
+The `reason` diagnostic applies when the compared or switched member is `x.reason._tag` or its bracket forms. Every other `_tag` member gets the `tag` diagnostic.
 
 **Rejected:**
 
@@ -561,7 +568,7 @@ Use the existing Schema, tagged class/error, or `Data.taggedEnum` constructor in
 
 **Scope notes:**
 - Quoted `"_tag":` and computed `["_tag"]:` keys count the same as `_tag:`.
-- The `_tag` value must be a string literal. `{ _tag: tag, value }` with a variable is outside the rule.
+- The `_tag` value must be a string literal. `{ _tag: tag, value }` with a variable is outside the rule. `{ _tag: "Ready" as const }` and a template-literal tag also pass the linter because the value node is an assertion or template. Flag those anyway as a reviewer and say the linter would not.
 - There is no test-file exemption. `expect(x).toEqual({ _tag: "Ready" })` is rejected.
 - Only the top-level pattern object passed to `Match.when` or `Match.not` is exempt. A nested `{ _tag: "..." }` inside the pattern (`Match.when({ error: { _tag: "X" } }, ...)`), or a pattern passed to `Match.whenOr` or `Match.whenAnd`, is rejected.
 - Type-level `_tag` literals (`type Ready = { _tag: "Ready" }`, interface members) are outside the rule. The rule visits object expressions only.
@@ -610,8 +617,8 @@ const label = Match.value(kind).pipe(
 ```
 
 **Scope notes:**
-- Every `else`-position link must be an equality (`==`, `===`, `!=`, `!==`) between a literal and the same source text. Literals include strings, numbers, booleans, `null`, and template literals with no `${}`.
-- A single ternary is outside the rule. A chain where any link compares a different expression, or is not a literal equality, is outside the rule. A chain nested inside another ternary's `then` or test position is never reported; only the outermost ternary is examined. `flag ? (kind === "a" ? x : kind === "b" ? y : z) : w` passes.
+- The outermost test and every `else`-position link must each be an equality (`==`, `===`, `!=`, `!==`) between a literal and the same source text. Literals include strings, numbers, booleans, `null`, and template literals with no `${}`.
+- A single ternary is outside the rule. A chain where any link compares a different expression, or is not a literal equality, is outside the rule. A ternary whose direct parent is another ternary is never examined, in any position: `flag ? (kind === "a" ? x : kind === "b" ? y : z) : w` passes. A chain wrapped in any other expression inside a ternary, such as `flag ? foo(kind === "a" ? x : kind === "b" ? y : z) : w`, is still reported.
 
 ---
 
@@ -630,7 +637,7 @@ const label = Match.value(kind).pipe(
 | require-safety-comment-for-type-assertion | BLOCK | Non-const assertion with no `SAFETY:` justification? |
 | no-reduce-accumulator-copy | BLOCK | Reducer body copies `acc`? Array copy methods need local array evidence for the initial value. |
 | oxc/no-accumulating-spread | BLOCK | `[...acc]` or `{...acc}` in a reducer or supported loop? |
-| no-runtime-typeof | POLICY | Any `typeof`? Not an existence probe against the string `"undefined"`? |
+| no-runtime-typeof | POLICY | Any runtime `typeof` expression? Not an existence probe against the string `"undefined"`? |
 | no-reflect-apply | POLICY | Global `Reflect.apply`? |
 | no-reflect-get | POLICY | Global `Reflect.get`? |
 | no-conditional-empty-object-spread | POLICY | `...(c ? x : {})` or `...(c ? {} : x)`? |
@@ -643,4 +650,4 @@ const label = Match.value(kind).pipe(
 | Effect: no-service-constructor-imports | BLOCK | Relative `make<CapabilityName>` import outside `*.test.*`/`*.spec.*`? |
 | Effect: prefer-effect-match | BLOCK | Chained literal ternary over the same value? |
 
-Source: https://github.com/dmmulroy/anti-slop. Vendored copies are the team's to change; drop or re-tier rules to match the team.
+Vendored copies are the team's to change; drop or re-tier rules to match the team.
