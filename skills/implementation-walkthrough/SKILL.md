@@ -38,6 +38,10 @@ some main focuses we care about (non-exhaustive):
 - high risk boundaries
 - performance
 
+i will send you the above message. while you are generating, i will generate my own approach and thinking. this will likely be wrong but it is me trying to generate my initial thinking. do not consider it to be the first approach.
+
+i will then compare my approach with your generation, and we will discuss and agree on a 1st approach.
+
 Step 5
 Record our first approach in an MD file. 
 Then run an adversarial review subagent with the focus on critiquing our approach.
