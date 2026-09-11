@@ -1,0 +1,41 @@
+---
+name: implementation-walkthrough
+description: Guide a discussion before implementation. Clarify user requirements and interface behavior, define tests and invariants, survey relevant code with snippets, compare designs through pseudocode and diagrams, and question the user to confirm shared understanding.
+---
+
+This will take place in multiple parts. Do one part a time.
+
+PART 1
+first we will discuss on understanding the user problem and the requirements, from a user perspective. we're not talking about any code rn and are only talking about the requirements from the user perspective and how itd finally look on the UI.
+
+PART 2
+*responded to questions regarding implementation details and user requirements*
+this is the plan so far. we should also think about unit tests to implement. lets start discussing what tests we'll have via pseudo code
+we want to discuss what the invariants are. we want to capture edge cases. we want to capture core tests that will satisfy the user requirements
+
+PART 3
+*finished writing tests*
+
+before psuedocode, lets discuss all the possible relevant files. without any implementation show me all relevant files and code you think may be possible. do not just show for one implementation show for multiple possible implementations if relevant
+
+show me the relevant types, interfaces, functions, classes, etc that you think would be related to this. the goal is getting a survey of how things exist
+
+you must show me relevant files AND the relevant files must be paired with code snippets. 
+first give a high level overview of the files.
+then for each file provide the relevant code snippets.
+be exhaustive in this survey.
+
+PART 4
+now we will discuss this via pseudocode. reference the /show-me styling purely for how you will use psuedocode and diagrams.
+some main focuses we care about (non-exhaustive):
+- types
+- interfaces
+- invariants
+- core functions / abstractions (especially pure functions / methods if any). signatures + pseudo
+- signatures of all relevant functions / methods and how they are connected / call each other / pass data between each other
+- data model (database)
+- server actions/load
+- high risk boundaries
+- performance
+Step 5
+run /grill-me so i understand all of the prior parts before beginning. this will ensure we are aligned on everything.
