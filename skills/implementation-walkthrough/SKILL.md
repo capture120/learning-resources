@@ -7,13 +7,20 @@ This will take place in multiple parts. Do one part a time.
 
 TLDR:
 # User needs & requirements
-Before using an LLM, I write my thinking about what the user requirements are. Then, I have the LLM generate its thoughts without my answer. I compare LLM's answer to mine -> debate until we agree. It's def important to discuss it from the user perspective for LLMs.
+Before using an LLM, I write my thinking about what the user requirements are.
+Then, I have the LLM generate its User requirements using Linear ticket without my answer.
+I compare LLM's answer to mine -> debate until we agree. 
 
 # Unit tests / Invariants
-Similar process as above but for unit tests. I write my thoughts first -> have LLM generate answer independently -> compare and discuss. Syntax of the unit tests does not matter (use pseudocode). Thinking through the edge cases and core behaviors is most important.
+Similar process as above but for unit tests.
+I write my thoughts first -> have LLM generate answer independently -> compare and discuss.
+Syntax of the unit tests does not matter (use pseudocode). 
+Thinking through the edge cases and core behaviors is most important.
 
 # File Exploration
-I tell the agent to exhaustively find all possibly relevant files. Not doing this tends to result in issues where agent misses existing functions, types, etc. Having a chat pass for the agent to exclusively search gives it better context imo
+I tell the agent to exhaustively find all possibly relevant files. 
+Not doing this can cause agent to miss existing implementations. 
+Having a pass for LLM to only search gives it better context imo.
 
 # Pseudocode
 I then have AI generate pseudocode focusing on these things:
@@ -30,6 +37,7 @@ I'll review the plan and critique it. I don't create this myself first for veloc
 
 # Adversarial Review
 I'll have an agent with fresh context critique my entire plan, explain alternative approaches I didn't consider, and give a bullet point list of all the approaches and their tradeoffs. 
+Bonus points if using a different model but I'm lazy and have a strong subagent critique
 I only do this once for velocity.
 
 # My Brain dump: 
