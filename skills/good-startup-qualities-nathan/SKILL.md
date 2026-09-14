@@ -1,5 +1,5 @@
 ---
-name: s-tier-startup-qualities-nathan
+name: good-startup-qualities-nathan
 description: qualities of an exponentially growing startup (very much non-exhaustive. specific to Stripe).
 ---
 
