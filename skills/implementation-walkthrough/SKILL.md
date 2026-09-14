@@ -57,3 +57,31 @@ A flow may look like this:
 
 Step 6
 Run /grill-me on the final approach we choose so i understand to ensure we are aligned on everything.
+
+
+TLDR:
+# User needs & requirements
+Before using an LLM, I write my thinking about what the user requirements are. Then, I have the LLM generate its thoughts without my answer. I compare LLM's answer to mine -> debate until we agree. It's def important to discuss it from the user perspective for LLMs.
+
+# Unit tests / Invariants
+Similar process as above but for unit tests. I write my thoughts first -> have LLM generate answer independently -> compare and discuss. Syntax of the unit tests does not matter (use psuedocode). Thinking through the edge cases and core behaviors is most important.
+
+# File Exploration
+I tell the agent to exhaustively find all possibly relevant files. Not doing this tends to result in issues where agent misses existing functions, types, etc. Having a chat pass for the agent to exclusively search gives it better context imo
+
+# Pseudocode
+I then have AI generate pseudocode focusing on these things:
+- Types
+- Interfaces
+- Invariants
+- Core functions implementation
+- Function signatures of all new or edited functions (ask AI to show on diagram how data passes between them)
+- Data model (database)
+- Server load / actions
+- High risk boundaries (where will things blow up)
+- Performance
+I'll review the plan and critique it. I don't create this myself first for velocity sake.
+
+# Adversarial Review
+I'll have an agent with fresh context critique my entire plan, explain alternative approaches I didn't consider, and give a bullet point list of all the approaches and their tradeoffs. 
+I only do this once for velocity.
