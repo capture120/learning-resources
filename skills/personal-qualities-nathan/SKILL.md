@@ -54,6 +54,11 @@ humans have long been scientists.
 
 # High Agency
 
+high agency is understanding that 
+- taking action + iterating = get shit done
+- taking actions builds momentum. hence you lower activation energy
+
+
 high agency: taking consistent, iterative steps to induce change.
 
 after truth seeking, you act on your constructed world model- to satisfy motivations.
