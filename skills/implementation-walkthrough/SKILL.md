@@ -16,7 +16,7 @@ we want to discuss what the invariants are. we want to capture edge cases. we wa
 PART 3
 *finished writing tests*
 
-before psuedocode, lets discuss all the possible relevant files. without any implementation show me all relevant files and code you think may be possible. do not just show for one implementation show for multiple possible implementations if relevant
+before pseudocode, lets discuss all the possible relevant files. without any implementation show me all relevant files and code you think may be possible. do not just show for one implementation show for multiple possible implementations if relevant
 
 show me the relevant types, interfaces, functions, classes, etc that you think would be related to this. the goal is getting a survey of how things exist
 
@@ -26,7 +26,7 @@ then for each file provide the relevant code snippets.
 be exhaustive in this survey.
 
 PART 4
-now we will discuss this via pseudocode. reference the /show-me styling purely for how you will use psuedocode and diagrams.
+now we will discuss this via pseudocode. reference the /show-me styling purely for how you will use pseudocode and diagrams.
 some main focuses we care about (non-exhaustive):
 - types
 - interfaces
@@ -64,7 +64,7 @@ TLDR:
 Before using an LLM, I write my thinking about what the user requirements are. Then, I have the LLM generate its thoughts without my answer. I compare LLM's answer to mine -> debate until we agree. It's def important to discuss it from the user perspective for LLMs.
 
 # Unit tests / Invariants
-Similar process as above but for unit tests. I write my thoughts first -> have LLM generate answer independently -> compare and discuss. Syntax of the unit tests does not matter (use psuedocode). Thinking through the edge cases and core behaviors is most important.
+Similar process as above but for unit tests. I write my thoughts first -> have LLM generate answer independently -> compare and discuss. Syntax of the unit tests does not matter (use pseudocode). Thinking through the edge cases and core behaviors is most important.
 
 # File Exploration
 I tell the agent to exhaustively find all possibly relevant files. Not doing this tends to result in issues where agent misses existing functions, types, etc. Having a chat pass for the agent to exclusively search gives it better context imo
