@@ -31,3 +31,4 @@ focus on outcomes - are your agents doing busy work? do you truly understand cus
 
 that’s how we truly scale
 """
+https://x.com/kunchenguid/status/2073926590116032939?s=46
