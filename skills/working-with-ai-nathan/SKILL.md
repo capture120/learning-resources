@@ -1,5 +1,5 @@
 ---
-name: implementation-walkthrough
+name: working-with-ai-nathan
 description: Guide a discussion before implementation. Clarify user requirements and interface behavior, define tests and invariants, survey relevant code with snippets, compare designs through pseudocode and diagrams, and question the user to confirm shared understanding.
 ---
 
