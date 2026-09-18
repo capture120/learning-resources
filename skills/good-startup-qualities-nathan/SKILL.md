@@ -39,3 +39,39 @@ I remember this passion for quality in everything-- all hands prep, convergence,
 
 """
 https://x.com/spakhm/status/2084739941985374372
+
+
+https://nat.org/
+"""
+As human beings it is our right (maybe our moral duty) to reshape the universe to our preferences
+- Technology, which is really knowledge, enables this
+- You should probably work on raising the ceiling, not the floor
+Enthusiasm matters!
+- It's much easier to work on things that are exciting to you
+- It might be easier to do big things than small things for this reason
+- Energy is a necessary input for progress
+It's important to do things fast
+- You learn more per unit time because you make contact with reality more frequently
+- Going fast makes you focus on what's important; there's no time for bullshit
+- "Slow is fake"
+- A week is 2% of the year
+- Time is the denominator
+The efficient market hypothesis is a lie
+- At best it is a very lossy heuristic
+- The best things in life occur where EMH is wrong
+- In many cases it's more accurate to model the world as 500 people than 8 billion
+- "Most people are other people"
+The cultural prohibition on micromanagement is harmful
+- Great individuals should be fully empowered to exercise their judgment
+- The goal is not to avoid mistakes; the goal is to achieve uncorrelated levels of excellence in some dimension
+- The downsides are worth it
+Smaller teams are better
+- Faster decisions, fewer meetings, more fun
+- No need to chop up work for political reasons
+- No room for mediocre people (can pay more, too!)
+- Large-scale engineering projects are more soluble in IQ than they appear
+- Many tech companies are 2-10x overstaffed
+You can do more than you think
+- We are tied down by invisible orthodoxy
+- The laws of physics are the only limit
+"""
