@@ -288,24 +288,24 @@ Run /grill-me on the final approach we choose so i understand to ensure we are a
 
 
 
-TLDR:
-# User needs & requirements
+# TLDR:
+## User needs & requirements
 Before using an LLM, I write my thinking about what the user requirements are.
 Then, I have the LLM generate User requirements using Linear ticket without my answer.
 I compare LLM's answer to mine -> debate until we agree. 
 
-# Unit tests / Invariants
+## Unit tests / Invariants
 Similar process as above but for unit tests.
 I write my thoughts first -> have LLM generate answer independently -> compare and discuss.
 Syntax of the unit tests does not matter (use pseudocode). 
 Thinking through the edge cases and core behaviors is most important.
 
-# File Exploration
+## File Exploration
 I tell the agent to exhaustively find all possibly relevant files. 
 Not doing this can cause agent to miss existing implementations. 
 Having a pass for LLM to only search gives it better context imo.
 
-# Pseudocode
+## Pseudocode
 I then have AI generate pseudocode focusing on these things:
 - Types
 - Interfaces
@@ -318,6 +318,6 @@ I then have AI generate pseudocode focusing on these things:
 - Performance
 I'll review the plan and critique it. I don't create this myself first for velocity sake.
 
-# Adversarial Review
+## Adversarial Review
 Have agent with fresh context critique my plan, propose alternative approaches I missed, and list all the approaches and their tradeoffs.
 I only do this once for velocity.
