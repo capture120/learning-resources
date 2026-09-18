@@ -5,40 +5,6 @@ description: Guide a discussion before implementation. Clarify user requirements
 
 This will take place in multiple parts. Do one part a time.
 
-TLDR:
-# User needs & requirements
-Before using an LLM, I write my thinking about what the user requirements are.
-Then, I have the LLM generate User requirements using Linear ticket without my answer.
-I compare LLM's answer to mine -> debate until we agree. 
-
-# Unit tests / Invariants
-Similar process as above but for unit tests.
-I write my thoughts first -> have LLM generate answer independently -> compare and discuss.
-Syntax of the unit tests does not matter (use pseudocode). 
-Thinking through the edge cases and core behaviors is most important.
-
-# File Exploration
-I tell the agent to exhaustively find all possibly relevant files. 
-Not doing this can cause agent to miss existing implementations. 
-Having a pass for LLM to only search gives it better context imo.
-
-# Pseudocode
-I then have AI generate pseudocode focusing on these things:
-- Types
-- Interfaces
-- Invariants
-- Core functions implementation
-- Function signatures of all new or edited functions (ask AI to show on diagram how data passes between them)
-- Data model (database)
-- Server load / actions
-- High risk boundaries (where will things blow up)
-- Performance
-I'll review the plan and critique it. I don't create this myself first for velocity sake.
-
-# Adversarial Review
-Have agent with fresh context critique my plan, propose alternative approaches I missed, and list all the approaches and their tradeoffs.
-I only do this once for velocity.
-
 # My Brain dump: 
 
 # PART 1
@@ -318,3 +284,40 @@ A flow may look like this:
 
 # PART 7 (optional. depending on complexity of PR)
 Run /grill-me on the final approach we choose so i understand to ensure we are aligned on everything.
+
+
+
+
+TLDR:
+# User needs & requirements
+Before using an LLM, I write my thinking about what the user requirements are.
+Then, I have the LLM generate User requirements using Linear ticket without my answer.
+I compare LLM's answer to mine -> debate until we agree. 
+
+# Unit tests / Invariants
+Similar process as above but for unit tests.
+I write my thoughts first -> have LLM generate answer independently -> compare and discuss.
+Syntax of the unit tests does not matter (use pseudocode). 
+Thinking through the edge cases and core behaviors is most important.
+
+# File Exploration
+I tell the agent to exhaustively find all possibly relevant files. 
+Not doing this can cause agent to miss existing implementations. 
+Having a pass for LLM to only search gives it better context imo.
+
+# Pseudocode
+I then have AI generate pseudocode focusing on these things:
+- Types
+- Interfaces
+- Invariants
+- Core functions implementation
+- Function signatures of all new or edited functions (ask AI to show on diagram how data passes between them)
+- Data model (database)
+- Server load / actions
+- High risk boundaries (where will things blow up)
+- Performance
+I'll review the plan and critique it. I don't create this myself first for velocity sake.
+
+# Adversarial Review
+Have agent with fresh context critique my plan, propose alternative approaches I missed, and list all the approaches and their tradeoffs.
+I only do this once for velocity.
