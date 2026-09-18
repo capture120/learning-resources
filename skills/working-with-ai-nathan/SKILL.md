@@ -41,15 +41,15 @@ I only do this once for velocity.
 
 # My Brain dump: 
 
-PART 1
+# PART 1
 first we will discuss on understanding the user problem and the requirements, from a user perspective. we're not talking about any code rn and are only talking about the requirements from the user perspective and how itd finally look on the UI.
 
-PART 2
+# PART 2
 *responded to questions regarding implementation details and user requirements*
 this is the plan so far. we should also think about unit tests to implement. lets start discussing what tests we'll have via pseudo code
 we want to discuss what the invariants are. we want to capture edge cases. we want to capture core tests that will satisfy the user requirements
 
-PART 3
+# PART 3
 *finished writing tests*
 
 before pseudocode, lets discuss all the possible relevant files. without any implementation show me all relevant files and code you think may be possible. do not just show for one implementation show for multiple possible implementations if relevant
@@ -61,7 +61,7 @@ first give a high level overview of the files.
 then for each file provide the relevant code snippets.
 be exhaustive in this survey.
 
-PART 4
+# PART 4
 now we will discuss this via pseudocode. reference the /show-me styling purely for how you will use pseudocode and diagrams.
 some main focuses we care about (non-exhaustive):
 - types
@@ -78,25 +78,11 @@ i will send you the above message. while you are generating, i will generate my 
 
 i will then compare my approach with your generation, and we will discuss and agree on a 1st approach.
 
-Step 5
-Record our first approach in an MD file. 
-Then run an adversarial review subagent with the focus on critiquing our approach.
-Explain the results of the critique and we will discuss in depth.
-For every new approach we come across and discuss, record into the MD file as a possible approach with benefits and tradeoffs.
+# Part 5 | Slava's guide for coding
+Review Slava's recommendations for AI coding. 
+See if there's anything we missed during our discussion that should be covered below. 
+Be very rigorous with this and pay extra attention.
 
-A flow may look like this:
-- Run critique on approach
-- Detect and discuss gaps identified by adversarial review
-- Come up with new approaches to possibly address gaps + understand tradeoffs. Record these approaches and also record the tradeoffs with the first approach.
-- Loop with the adversarial review (default 1 additional time 2 times total to not get stuck)
-- Choose a final approach accounting for the tradeoffs
-
-Step 6
-Run /grill-me on the final approach we choose so i understand to ensure we are aligned on everything.
-
-
-
-# Slava's guide for coding
 AI can make us significantly faster engineers—but only when we give it the right context and manage the work deliberately. When AI feels slow, expensive, or “not smart enough,” the problem is often not the model. More commonly, we have skipped the work that makes good engineering (and good AI collaboration) possible.
 
 Before starting, decide whether the session is primarily for **exploration** or for **getting something done**.
@@ -316,3 +302,19 @@ scratchspace
     1. Solid core vs bullshit exterior
     2. Identify what’s the most important to get right vs what’s flexible
 5. macro-level: know your domain, know your architectures, maybe it’s okay to not know every line of code
+
+# PART 6 (optional. depending on complexity of PR)
+Record our first approach in an MD file. 
+Then run an adversarial review subagent with the focus on critiquing our approach.
+Explain the results of the critique and we will discuss in depth.
+For every new approach we come across and discuss, record into the MD file as a possible approach with benefits and tradeoffs.
+
+A flow may look like this:
+- Run critique on approach
+- Detect and discuss gaps identified by adversarial review
+- Come up with new approaches to possibly address gaps + understand tradeoffs. Record these approaches and also record the tradeoffs with the first approach.
+- Loop with the adversarial review (default 1 additional time 2 times total to not get stuck)
+- Choose a final approach accounting for the tradeoffs
+
+# PART 7 (optional. depending on complexity of PR)
+Run /grill-me on the final approach we choose so i understand to ensure we are aligned on everything.
