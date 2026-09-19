@@ -8,11 +8,24 @@ Make sure you are rigorous
 Then, once you've gotten insight quote helpful quotes you think are relevant (if unsure but still seems related or connected multi-hop, quote anyways) -> give actionables to follow
 
 
+# Heuristics
+- Act as if *I have way less time than I think* I have
+- *Work on problems fast* speed focuses on what actually matters
+- Work on *hard problems I struggle & fail fast on*. iterate fast. seek help fast when truly stuck
+- Find *high leverage problems* Leverage = Impact / # of ppl capable
+- *Outsource my thinking, not my understanding* outsource thinking once I've thought once
+- *Focus 1 major problem >=1 week b4 context switch* to learn new skills
+- *Maximize my learning*
+- *Work on things I'm excited about*
+- Do work to *Raise the ceiling*, not the floor
+- Question what it is I'm not asking
+- Do work s.t *I get dopamine from improving my ideas* than from having them validated
+
 # James Campbell
 It's a generally good heuristic to act as if you have way less time than you think you have
 
 # Jony Ive
-This sounds really simplistic but it still shocks me how few people actually practice this - and it's a struggle to practice - but is this issue of focus. Steve was the most remarkably focused person I've ever met in my life. The thing with focus is it's not sort this thing you aspire to or you decide on Monday "you know what I'm going to be focused". It is a every minute a "why are we talking about this"- this is what we are working on. You can achieve so much when you truly focus. One of the things Steve would say- because I think he was concerned I wasn't- he would say "how many things have you said no" to. I would honestly have these sacrificial things - because I wanted to be very honest - and I would say I said "no to this and no to that" but he knew I wasn't vaguely interested in doing those things anyway so there was no real sacrifice. What focus means is you say no to something that you with every bone in your body you think is a phenomenal idea and you wake up thinking about it, but you say no to it because your'e focusing on something else. The third one is an interesting one. It actually reflects a little bit poorly on myself but I remember having a conversation with him and was asking why it could have been perceived that in his critique of a piece of work he was a little harsh- and we've been working on this - we put our heart and soul into this- I was saying couldn't we be a little bit more - couldn't we moderate the things we said a little bit- and he said well why and I said because well I care about the team and he said this brutally, brilliantly insightful thing which he said "no Jony you're just really vain" he said "no you just want people to like you" and I'm surprised at you because I thought you really held the work up as the most important - not how you believe that you were perceived by other people and I was terribly crossed because I knew he was right
+The thing with focus is it's not sort this thing you aspire to or you decide on Monday "you know what I'm going to be focused". It is a every minute a "why are we talking about this"- this is what we are working on. You can achieve so much when you truly focus. One of the things Steve would say is "how many things have you said no to" ... What focus means is you say no to something that you with every bone in your body you think is a phenomenal idea and you wake up thinking about it, but you say no to it because you're focusing on something else.
 
 # Nat Friedman
 nat.org
@@ -132,3 +145,11 @@ whichever one of these 3 you pick depends on what is highest leverage.
 When working on difficult problem requiring learning new skill(s), be patient and deeply learn that skill so you can reuse later for cheap. You don't have to be “only doing” one problem for months (this would be naive). The broader rule is reduce context switching as much as needed. eg you could work deeply on “medium difficulty” problems for a week at a time. or, maybe some problems require longer periods of focus and less context switching. Learning how much time to work on a problem and when to context switch simply takes experience
 
 also, while you have that focus you can still perform highly autonomous, easy tasks at minimum cost because you've solved those problems deeply in the past and mastered the relevant skills (similar to retrieving from cache)
+
+make decisions under ambiguity, handle conflicts, look for opportunities to fail fast, look for hard problems
+Humans are bad at context switching. in various aspects of things. batching your tasks together such that you can have deep focus is important.
+
+ive noticed that sometimes ill not do actions because i want to "do them perfectly". eg dont start watching these videos on practice problems because i need to *always* do them myself first, generate my own interpretation to maximize my learning. that's not the right approach because the heuristic is "do whatever i need to do to take the first action and get started". for example, when i was learning TFT it was extremely helpful for me personally just to watch videos without predicting what to do next *at the beginning* so i could get an initial understanding and intuition. even before that tho, ofc, it was better to blindly wander and try playing my own games at the beginning but i actually literally had alec narrow my scope to a very very small specific playstyle (3 cost reroll) and i played that again and again even tho technically i was just repeating behaviors it was fun.
+lots of yapping but you cant expect to learn everything "perfectly" in every scenario and me even turning my brain off and absorbing information is fine as long as i continuously take action. the thinking is then eventually
+ill absorb enough information where ill get my own intuitions and predictions, and then that'll lower the barrier entry such that i can take action and build up my momentum and even expand my space to do more interesting 
+problems / projects with that information. 

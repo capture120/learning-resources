@@ -156,3 +156,18 @@ feedback on “if youre clear” “engage by asking simple follow up questions�
 > → prepare responses for some common questions → try to answer simulated questions
 
 ## 8 signals to look for in candidates
+
+
+
+
+# Scratch Pad
+
+looking for past behaviors because they are indiciative of how you will operate at the company behaviors, habits, personality, they change slowly
+solving for ambiguity 
+common mistakes are not being clear about scop you took ongetting overly emotional and letting that slip through
+interviewers will be matching against successful archetypes and strong performers theyve encoutnered in the past as well as weak ones
+culturla fit and pattern matchingthey are looking for signal areas to map you against a certain archetype
+they want someone who can make decisions under ambiguity, handle conflicts, look for opportunities to fail fast, look for hard problems
+
+
+
