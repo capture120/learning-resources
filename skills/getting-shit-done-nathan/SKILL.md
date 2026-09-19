@@ -21,11 +21,14 @@ Then, once you've gotten insight quote helpful quotes you think are relevant (if
 - Question what it is I'm not asking
 - Do work s.t *I get dopamine from improving my ideas* than from having them validated
 
-# James Campbell
-It's a generally good heuristic to act as if you have way less time than you think you have
+# Andrej Karpathy
+How to become expert at thing:
+1 iteratively take on concrete projects and accomplish them depth wise, learning “on demand” (ie don’t learn bottom up breadth wise)
+2 teach/summarize everything you learn in your own words
+3 only compare yourself to younger you, never to others
 
-# Jony Ive
-The thing with focus is it's not sort this thing you aspire to or you decide on Monday "you know what I'm going to be focused". It is a every minute a "why are we talking about this"- this is what we are working on. You can achieve so much when you truly focus. One of the things Steve would say is "how many things have you said no to" ... What focus means is you say no to something that you with every bone in your body you think is a phenomenal idea and you wake up thinking about it, but you say no to it because you're focusing on something else.
+Agency > Intelligence
+[From Grok:] ... '[Agency is] the belief that you *can* act, paired with the will to follow through. Psychologists often tie it to concepts like locus of control: high-agency folks lean toward an internal locus, feeling they steer their fate, while low-agency folks might lean external, seeing life as something that happens *to* them.'
 
 # Nat Friedman
 nat.org
@@ -69,14 +72,11 @@ You can do more than you think
 - We are tied down by invisible orthodoxy
 - The laws of physics are the only limit
 
-# Andrej Karpathy
-How to become expert at thing:
-1 iteratively take on concrete projects and accomplish them depth wise, learning “on demand” (ie don’t learn bottom up breadth wise)
-2 teach/summarize everything you learn in your own words
-3 only compare yourself to younger you, never to others
+# James Campbell
+It's a generally good heuristic to act as if you have way less time than you think you have
 
-Agency > Intelligence
-[From Grok:] ... '[Agency is] the belief that you *can* act, paired with the will to follow through. Psychologists often tie it to concepts like locus of control: high-agency folks lean toward an internal locus, feeling they steer their fate, while low-agency folks might lean external, seeing life as something that happens *to* them.'
+# Jony Ive
+The thing with focus is it's not sort this thing you aspire to or you decide on Monday "you know what I'm going to be focused". It is a every minute a "why are we talking about this"- this is what we are working on. You can achieve so much when you truly focus. One of the things Steve would say is "how many things have you said no to" ... What focus means is you say no to something that you with every bone in your body you think is a phenomenal idea and you wake up thinking about it, but you say no to it because you're focusing on something else.
 
 # Slava
 its obviously hard to excel at everything at once, and "wearing many hats" usually means that you passively do 6 things but focus on 1 at any given point in time (e.g. I had "platform" weeks and "money" weeks and "interviews" weeks).
